@@ -1,0 +1,248 @@
+/* /////////////////////////////////////
+   GLOBAL VARIABLES
+//////////////////////////////////////*/
+
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram linear-gradient(90deg, hsl(37, 97%, 70%) , hsl(329, 70%, 58%));
+    --youtube: hsl(348, 97%, 39%);
+
+
+
+
+}
+/*
+dark theme */
+
+.dark_theme {
+    --very_dark_blue: hsl(230, 17%, 14%);
+    --very_dark_blue_pattern: hsl(232, 19%, 15%);
+    --dark_saturated_blue: hsl(228, 28%, 20%);
+    --saturated_blue: hsl(228, 34%, 66%);
+    --white_text: hsl(0, 0%, 100%)
+}
+
+.light_theme {
+    --white_background: hsl(0, 0%, 100%);
+    --very_pale_blue: hsl(225, 100%, 98%);
+    --light_grayish_blue: hsl(227, 47%, 96%);
+    --dark_grayish_blue: hsl(228, 12%, 44%);
+    --blue_text: hsl(230, 17%, 14%)
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+    font-weight: 400;
+    /* font-weight: 700; */
+}
+
+/* /////////////////////////////////////
+   MOBILE FIRST
+//////////////////////////////////////*/
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+.appContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top {
+    background: var(--dark-blue);
+    width: 90vw;
+    border-radius: 0.8rem;
+    border-top-right-radius: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 3rem;
+}
+.logo {
+    width: 11rem;
+}
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+.iconContainer {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 1.6rem;
+    background: var(--very-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 2rem;
+    padding: 0.15rem;
+}
+.icon {
+    padding: 0.2rem;
+    height: 55%;
+}
+
+.bottom {
+    background: var(--dark-blue);
+    width: 90vw;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 3rem 4rem 3rem;
+    margin-top: 2rem;
+    position: relative;
+    text-align: center;
+}
+.message {
+    color: #fff;
+    font-size: clamp(0.85rem, 0.5vw, 1.5rem);
+    text-align: center;
+}
+.message span {
+    font-weight: 700;
+}
+.memoryBar {
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    background: var(--very-dark);
+    padding: 0.2rem;
+}
+.currentAmount {
+    background: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height: 100%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 1.2rem;
+    padding: 0.2rem;
+    animation: 0.75s currentAmountBar 0.2s forwards, ease-in;
+}
+@keyframes currentAmountBar {
+    0 {
+        width: 1rem;
+    }
+    100% {
+        width: 70%;
+    }
+}
+.nodule {
+    background: white;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 1rem;
+}
+.limits {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+.lowerLimit span {
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+.logo {
+    width: 9rem;
+}
+.memoryMessage {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    margin: 0;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.memoryMessage span {
+    vertical-align: middle;
+    padding-right: 0.25rem;
+
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 62.5rem) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom left;
+        display: grid;
+        background-color: var(--very-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .appContainer {
+        flex-direction: row;
+        width: 70vw;
+        height: auto;
+        align-items: flex-end;
+    }
+    .top {
+        width: 39%;
+        margin-right: 1%;
+    }
+    .memoryMessage {
+        bottom: 110%;
+        right: 3rem;
+    }
+    .memoryMessage::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        transform: translateY(30%);
+        right: 0;
+        height: 0.15rem;
+        width: 0.15rem;
+        border-top: 2rem solid transparent;
+        border-right: 2rem solid white;
+        border-bottom: 2rem solid transparent;
+        border-left: 2rem solid transparent;
+        z-index: -5;
+    }
+    .bottom {
+        padding: 1rem 3rem;
+        margin-top: 2.5rem;
+        width: 59%;
+        margin-left: 1%;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (min-width: 75rem) {
+}
