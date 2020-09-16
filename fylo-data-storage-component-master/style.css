@@ -1,0 +1,119 @@
+/* /////////////////////////////////////
+   GLOBAL VARIABLES
+//////////////////////////////////////*/
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark: hsl(229, 57%, 11%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./images/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-size: 50vw;
+    background-position: bottom left;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font-family: "Inter", sans-serif;
+    overflow: hidden;
+    font-size: 1.4rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    /* font-weight: 700; */
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+@media only screen and (min-width: 62.5rem) {
+    body {
+        background-size: 100vw;
+        background-image: none;
+        background: #f0f0f0;
+    }
+
+    .testimonials {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        width: 80%;
+        max-width: 1200px;
+        box-shadow: 10px 10px 50px 5px rgba(0, 0, 0, 0.15);
+        padding: 2.5rem 5rem;
+        background: #fff;
+        background-image: url("./images/pattern-curve.svg");
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: bottom left;
+    }
+
+    .sliderTop,
+    .image,
+    .sliderBottom {
+        margin: 0;
+        grid-row: 1;
+    }
+
+    .sliderTop {
+        grid-column: 5 / -1;
+        padding: 4.5rem;
+    }
+
+    .image {
+        width: 545px;
+        max-width: 115%;
+    }
+
+    .slider {
+        bottom: 3.25rem;
+        left: 5.75rem;
+        background: white;
+        border-radius: 50px;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .sliderButton {
+        padding: 0.85rem 1.25rem;
+    }
+
+    .arrow {
+        transform: scale(1);
+    }
+
+    .sliderBottom {
+        grid-column: 1 / 7;
+        text-align: left;
+        z-index: 1;
+        align-self: center;
+        background-size: 6rem;
+        background-position-x: 6rem;
+    }
+
+    .bio {
+        margin-left: 0;
+        margin-top: 1em;
+    }
+
+    .name,
+    .position {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 75rem) {
+    .sliderBottom {
+        background-size: 8rem;
+    }
+
+    .bio {
+        margin-top: 1.5em;
+    }
+}
