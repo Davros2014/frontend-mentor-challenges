@@ -68,8 +68,8 @@ body {
     width: 100%;
 }
 .iconContainer {
-    width: 10vw;
-    height: 10vw;
+    width: 3rem;
+    height: 3rem;
     margin-right: 1.6rem;
     background: var(--very-dark);
     display: flex;
@@ -84,13 +84,12 @@ body {
 .bottom {
     background: var(--dark-blue);
     width: 90vw;
-    height: 30vh;
     border-radius: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 4rem 3rem;
     margin-top: 2rem;
     position: relative;
     text-align: center;
@@ -116,13 +115,13 @@ body {
     border-radius: 1rem;
     display: flex;
     justify-content: flex-end;
-    width: 0;
+    width: 1.2rem;
     padding: 0.2rem;
     animation: 0.75s currentAmountBar 0.2s forwards, ease-in;
 }
 @keyframes currentAmountBar {
     0 {
-        width: 0;
+        width: 1rem;
     }
     100% {
         width: 70%;
@@ -139,11 +138,17 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    font-size: 1rem;
 }
+.lowerLimit span {
+    font-size: 0.75rem;
+}
+
 .memoryMessage {
     position: absolute;
     bottom: 0;
     transform: translateY(50%);
+    margin: 0;
     border-radius: 10px;
     padding: 1rem 2rem;
     background: #fff;
@@ -151,6 +156,7 @@ body {
     text-align: center;
     text-transform: uppercase;
 }
+
 .memoryMessage span {
     font-size: 2.75rem;
     font-weight: 700;
@@ -158,85 +164,48 @@ body {
 
 @media only screen and (min-width: 62.5rem) {
     body {
-        background-size: 100vw;
-        background-image: none;
-        background: #f0f0f0;
-    }
-
-    .testimonials {
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        width: 80%;
-        max-width: 1200px;
-        box-shadow: 10px 10px 50px 5px rgba(0, 0, 0, 0.15);
-        padding: 2.5rem 5rem;
-        background: #fff;
-        background-image: url("./images/pattern-curve.svg");
+        background-image: url(./images/bg-desktop.png);
         background-repeat: no-repeat;
-        background-size: 50%;
+        background-size: 100%;
         background-position: bottom left;
+        display: grid;
+        background-color: var(--very-dark);
     }
-
-    .sliderTop,
-    .image,
-    .sliderBottom {
-        margin: 0;
-        grid-row: 1;
+    .appContainer {
+        flex-direction: row;
+        flex-direction: row;
+        width: 70vw;
     }
-
-    .sliderTop {
-        grid-column: 5 / -1;
-        padding: 4.5rem;
+    .top {
+        width: 39%;
+        margin-right: 1%;
     }
-
-    .image {
-        width: 545px;
-        max-width: 115%;
+    .memoryMessage {
+        bottom: 110%;
+        right: 3rem;
     }
-
-    .slider {
-        bottom: 3.25rem;
-        left: 5.75rem;
-        background: white;
-        border-radius: 50px;
-        overflow: hidden;
-        display: flex;
+    .memoryMessage::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        transform: translateY(30%);
+        right: 0;
+        height: 0.25rem;
+        width: 0.25rem;
+        border-top: 3rem solid transparent;
+        border-right: 3rem solid white;
+        border-bottom: 3rem solid transparent;
+        border-left: 3rem solid transparent;
+        z-index: -5;
     }
-
-    .sliderButton {
-        padding: 0.85rem 1.25rem;
-    }
-
-    .arrow {
-        transform: scale(1);
-    }
-
-    .sliderBottom {
-        grid-column: 1 / 7;
-        text-align: left;
-        z-index: 1;
-        align-self: center;
-        background-size: 6rem;
-        background-position-x: 6rem;
-    }
-
-    .bio {
-        margin-left: 0;
-        margin-top: 1em;
-    }
-
-    .name,
-    .position {
-        display: inline-block;
+    .bottom {
+        padding: 1rem 3rem;
+        margin-top: 2rem;
+        width: 59%;
+        margin-left: 1%;
+        align-items: flex-start;
     }
 }
 
 @media only screen and (min-width: 75rem) {
-    .sliderBottom {
-        background-size: 8rem;
-    }
-
-    .bio {
-        margin-top: 1.5em;
-    }
 }
