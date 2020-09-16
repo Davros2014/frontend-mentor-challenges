@@ -12,9 +12,16 @@
             href="./images/favicon-32x32.png"
         />
         <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+        />
+        <link
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
             rel="stylesheet"
         />
+        <link href="./style.css" rel="stylesheet" />
         <title>Data storage component</title>
 
         <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -29,11 +36,50 @@
         </style>
     </head>
     <body>
-        You’ve used 815 GB of your storage 185 GB Left 0 GB 1000 GB
-
-        <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+        <div class="appContainer">
+            <section class="top">
+                <img src="./images/logo.svg" alt="logo" class="logo" />
+                <div class="icons">
+                    <img
+                        src="./images/icon-document.svg"
+                        alt="document"
+                        class="icon"
+                    />
+                    <img
+                        src="./images/icon-folder.svg"
+                        alt="folder"
+                        class="icon"
+                    />
+                    <img
+                        src="./images/icon-upload.svg"
+                        alt="upload"
+                        class="icon"
+                    />
+                </div>
+            </section>
+            <section class="bottom">
+                <p class="message">
+                    You’ve used 815 GB of your storage <span>185 GB</span> Left
+                </p>
+                <div class="memoryBar">
+                    <div class="currentAmount">
+                        <div class="nodule"></div>
+                    </div>
+                </div>
+                <div class="limits">
+                    <p class="lowerLimit">0 GB</p>
+                    <p class="upperLimit">1000 GB</p>
+                </div>
+                <p class="memoryMessage"><span>185 GB</span> Left</p>
+            </section>
+        </div>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Your Name Here</a>.
+        </div>
     </body>
 </html>

@@ -14,9 +14,9 @@
 }
 
 body {
-    background-image: url("./images/pattern-curve.svg");
+    background-image: url(./images/bg-mobile.png);
     background-repeat: no-repeat;
-    background-size: 50vw;
+    background-size: cover;
     background-position: bottom left;
     display: grid;
     place-items: center;
@@ -30,8 +30,25 @@ body {
 }
 
 /* /////////////////////////////////////
+   MOBILE FIRST
+//////////////////////////////////////*/
+
+/* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
+
+.appContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.top {
+    background: var(--dark-blue);
+    width: 90vw;
+    height: 30vh;
+    border-radius: 1rem;
+    border-top-right-radius: 10rem;
+}
 
 @media only screen and (min-width: 62.5rem) {
     body {
