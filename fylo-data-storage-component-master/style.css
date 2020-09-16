@@ -23,7 +23,6 @@ body {
     min-height: 100vh;
     font-family: "Inter", sans-serif;
     overflow: hidden;
-    font-size: 1.4rem;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     /* font-weight: 700; */
@@ -49,14 +48,13 @@ body {
 .top {
     background: var(--dark-blue);
     width: 90vw;
-    height: 30vh;
-    border-radius: 1rem;
-    border-top-right-radius: 8rem;
+    border-radius: 0.8rem;
+    border-top-right-radius: 6rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    padding: 4rem 3rem;
+    padding: 3rem;
 }
 .logo {
     width: 11rem;
@@ -76,15 +74,18 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    margin-top: 2rem;
+    padding: 0.15rem;
 }
 .icon {
-    padding: 0.1rem;
-    width: 50%;
+    padding: 0.2rem;
+    height: 55%;
 }
+
 .bottom {
     background: var(--dark-blue);
     width: 90vw;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -96,7 +97,7 @@ body {
 }
 .message {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: clamp(0.85rem, 0.5vw, 1.5rem);
     text-align: center;
 }
 .message span {
@@ -139,11 +140,15 @@ body {
     justify-content: space-between;
     width: 100%;
     font-size: 1rem;
+    vertical-align: middle;
 }
 .lowerLimit span {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
+    vertical-align: middle;
 }
-
+.logo {
+    width: 9rem;
+}
 .memoryMessage {
     position: absolute;
     bottom: 0;
@@ -155,9 +160,13 @@ body {
     font-size: 0.9rem;
     text-align: center;
     text-transform: uppercase;
+    vertical-align: middle;
 }
 
 .memoryMessage span {
+    vertical-align: middle;
+    padding-right: 0.25rem;
+
     font-size: 2.75rem;
     font-weight: 700;
 }
@@ -194,17 +203,17 @@ body {
         bottom: 0;
         transform: translateY(30%);
         right: 0;
-        height: 0.25rem;
-        width: 0.25rem;
-        border-top: 3rem solid transparent;
-        border-right: 3rem solid white;
-        border-bottom: 3rem solid transparent;
-        border-left: 3rem solid transparent;
+        height: 0.15rem;
+        width: 0.15rem;
+        border-top: 2rem solid transparent;
+        border-right: 2rem solid white;
+        border-bottom: 2rem solid transparent;
+        border-left: 2rem solid transparent;
         z-index: -5;
     }
     .bottom {
         padding: 1rem 3rem;
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         width: 59%;
         margin-left: 1%;
         align-items: flex-start;
