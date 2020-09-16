@@ -170,11 +170,15 @@ body {
         background-position: bottom left;
         display: grid;
         background-color: var(--very-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .appContainer {
         flex-direction: row;
-        flex-direction: row;
         width: 70vw;
+        height: auto;
+        align-items: flex-end;
     }
     .top {
         width: 39%;
