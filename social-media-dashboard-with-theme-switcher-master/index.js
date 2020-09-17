@@ -1,7 +1,7 @@
 const info = [
     {
         socialProfile: "@nathanf",
-        socialIcon: "icon-facebook.svg",
+        socialIcon: "facebook",
         followers: "1987",
         followersToday: 12,
         pageViewsLikesOrTweets: 87,
@@ -11,7 +11,7 @@ const info = [
     },
     {
         socialProfile: "@nathanf",
-        socialIcon: "icon-twitter.svg",
+        socialIcon: "twitter",
         followers: "1044",
         followersToday: 12,
         pageViewsLikesOrTweets: 117,
@@ -21,7 +21,7 @@ const info = [
     },
     {
         socialProfile: "@realnathanf",
-        socialIcon: "icon-instagram.svg",
+        socialIcon: "instagram",
         followers: "11k",
         followersToday: 1099,
         pageViewsLikesOrTweets: 5462,
@@ -31,8 +31,8 @@ const info = [
     },
     {
         socialProfile: "Nathan F.",
-        socialIcon: "icon-youtube.svg",
-        followers: "8239",
+        socialIcon: "youtube",
+        subscribers: "8239",
         followersToday: 144,
         pageViewsLikesOrTweets: 107,
         pageViewsPercentage: "19%",
@@ -46,19 +46,31 @@ const socialMediaCards = document.querySelector(".socialMediaCards");
 
 function dashboardMarkup(info) {
     const mediaCardsMarkup = info.map(data => {
-        return `
-            <div class="socialPanel">
-                <div class="socialDetails">
-                    <img class="socialIcon" src="./images/${data.socialIcon}" />
-                    <p class="socialIdentity">${data.socialProfile}</p>
-                </div>
-                <h1 class="socialNumbers">${data.followers}</h1>
-                <p class="followers">FOLLOWERS</p>
-                <p class="numberFollowers">
-                    <img class="upArrow" src="./images/icon-up.svg" />${data.followersToday} Today
-                </p>
-            </div>
-            `;
+        const {
+            socialIcon,
+            socialProfile,
+            followers,
+            subscribers,
+            followersToday
+        } = data;
+        return `<div class="socialPanel ${socialIcon}">
+                                <div class="socialDetails">
+                                    <img
+                                        class="socialIcon"
+                                        src="./images/icon-${socialIcon}.svg"
+                                    />
+                                    <p class="socialIdentity">${socialProfile}</p>
+                                </div>
+                                <h1 class="socialNumbers">
+                                    ${followers ? followers : subscribers}
+                                </h1>
+                                <p class="followers">
+                                    ${followers ? "followers" : "subscribers"}
+                                </p>
+                                <p class="numberFollowers">
+                                    <img class="upArrow" src="./images/icon-up.svg" />${followersToday} Today
+                                </p>
+                            </div>`;
     });
 
     // const overviewMarkup = info.map(data => {
@@ -68,7 +80,7 @@ function dashboardMarkup(info) {
     //         </div>
     //         `;
     // });
-    socialMediaCards.insertAdjacentHTML("afterbegin", mediaCardsMarkup);
+    socialMediaCards.innerHTML = mediaCardsMarkup.join("");
     // socialMediaOverview.insertAdjacentHTML("afterbegin", overviewMarkup);
 }
 

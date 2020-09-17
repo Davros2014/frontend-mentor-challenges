@@ -7,12 +7,10 @@
     --bright-red: hsl(356, 69%, 56%);
     --facebook: hsl(208, 92%, 53%);
     --twitter: hsl(203, 89%, 53%);
-    --instagram linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     --youtube: hsl(348, 97%, 39%);
     --dark_grayish_blue: hsl(228, 12%, 44%);
---very_pale_blue: hsl(225, 100%, 98%);
-
-
+    --very_pale_blue: hsl(225, 100%, 98%);
 }
 /*
 dark theme */
@@ -22,7 +20,7 @@ dark theme */
     --very_dark_blue_pattern: hsl(232, 19%, 15%);
     --dark_saturated_blue: hsl(228, 28%, 20%);
     --saturated_blue: hsl(228, 34%, 66%);
-    --white_text: hsl(0, 0%, 100%)
+    --white_text: hsl(0, 0%, 100%);
 }
 
 .light_theme {
@@ -30,28 +28,34 @@ dark theme */
     --very_pale_blue: hsl(225, 100%, 98%);
     --light_grayish_blue: hsl(227, 47%, 96%);
     --dark_grayish_blue: hsl(228, 12%, 44%);
-    --blue_text: hsl(230, 17%, 14%)
+    --blue_text: hsl(230, 17%, 14%);
 }
-
 
 * {
     box-sizing: border-box;
 }
-h1, h2, h3, h4, h5, h6, p, a, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
     margin: 0;
     padding: 0;
 }
 
 body {
-    display: grid;
-    /* min-height: 100vh; */
+    background-color: var(--very_dark_blue);
+    font-size: 1.4rem;
     font-family: "Inter", sans-serif;
-    overflow: hidden;
     font-weight: 400;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    /* font-weight: 700; */
+    line-height: 1.5;
+    width: auto;
+    max-width: 100rem;
+    margin: 0 auto;
 }
 
 /* /////////////////////////////////////
@@ -59,13 +63,10 @@ body {
 //////////////////////////////////////*/
 
 .socialDashboard {
-    width: 100vw;
-    display: grid;
-    flex-direction: column;
-    justify-content: center;
     margin: auto;
     padding: 5vw;
 }
+
 .dashboardTitles {
     border-bottom: 1px solid var(--dark_grayish_blue);
     margin-bottom: 1rem;
@@ -77,7 +78,6 @@ body {
 .mediaSubHeader {
     color: var(--dark_grayish_blue);
     margin-bottom: 2rem;
-
 }
 .themeSwitcherContainer {
     display: flex;
@@ -85,7 +85,6 @@ body {
     align-items: center;
     width: 100%;
     height: 2rem;
-    /* background: red; */
 }
 .themeText {
     font-weight: 700;
@@ -93,12 +92,9 @@ body {
 }
 .themeSwitcher {
     position: relative;
-
     border-radius: 20px;
     width: 3rem;
     height: 1.5rem;
-    /* outline: none;
-    border: none; */
     background: var(--dark_grayish_blue);
     padding: 0.2rem;
     display: flex;
@@ -112,24 +108,56 @@ body {
     height: 1.2rem;
     border-radius: 100%;
     left: 0.2rem;
-    animation: 0.1s startEnd  forwards ease-in;
-
+    animation: 0.1s startEnd forwards ease-in;
 }
 
-
 /* SOCIAL CARDS */
-
+.socialMediaCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    column-gap: 2.5rem;
+    margin-top: 4rem;
+}
 .socialPanel {
     background: var(--very_pale_blue);
-    padding: 2rem;
+    position: relative;
+    padding: 2.3rem;
     margin-top: 1rem;
-    border-radius: 10px;
-    border-top: 4px solid var(--facebook);
+    border-radius: 0.8rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
+.socialPanel:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    height: 0.5rem;
+}
+.facebook:before {
+    background-color: var(--facebook);
+}
+.twitter:before {
+    background-color: var(--twitter);
+}
+.instagram:before {
+    background: var(--instagram);
+}
+.youtube:before {
+    background-color: var(--youtube);
+}
+
 .socialDetails {
     display: flex;
     justify-content: space-around;
@@ -149,12 +177,11 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin: 0;
-
 }
 .followers {
     margin: 0;
     margin-bottom: 1rem;
-
+    text-transform: uppercase;
     letter-spacing: 0.3rem;
     color: var(--dark_grayish_blue);
 }
@@ -168,9 +195,7 @@ body {
     margin-right: 0.25rem;
     margin-bottom: 0.25rem;
     width: 0.75rem;
-
 }
-
 
 @keyframes startEnd {
     0% {
@@ -181,16 +206,14 @@ body {
     }
 }
 
-
-
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
 
-
-
 @media only screen and (min-width: 62.5rem) {
-
+    .socialMediaCards {
+        grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    }
 }
 
 @media only screen and (min-width: 75rem) {
