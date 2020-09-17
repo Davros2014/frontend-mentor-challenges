@@ -43,12 +43,39 @@
     </head>
     <body>
         <section class="socialDashboard">
-            <div class="title">
+            <div class="dashboardTitles">
                 <h1 class="mediaHeader">Social Media Dashboard</h1>
                 <h5 class="mediaSubHeader">Total Followers: 23,004</h5>
             </div>
             <div class="themeSwitcherContainer">
-                <p class="themeText">Dark Mode</p>
+                <p class="themeText">Light Mode</p>
+                <div class="themeSwitcher">
+                    <div class="themeSwitcherButton"></div>
+                </div>
+            </div>
+            <section class="socialMediaCards"></section>
+            <div class="dashboardTitles">
+                <h1 class="mediaHeader">Overview - Today</h1>
+            </div>
+            <section class="socialMediaOverview">
+                <div class="socialViews">
+                    <p class="pageViews">Page Views</p>
+                </div>
+                <div class="socialPercentage">
+                    <img class="socialIcon" src="./images/icon-facebook.svg" />
+                    <p class="viewsPercentage">
+                        <img class="upArrow" src="./images/icon-up.svg" />
+                        ${data.followersToday} 303%
+                    </p>
+                </div>
+            </section>
+
+            <!-- <div class="dashboardTitles">
+                <h1 class="mediaHeader">Social Media Dashboard</h1>
+                <h5 class="mediaSubHeader">Total Followers: 23,004</h5>
+            </div>
+            <div class="themeSwitcherContainer">
+                <p class="themeText">Light Mode</p>
                 <div class="themeSwitcher">
                     <div class="themeSwitcherButton"></div>
                 </div>
@@ -63,7 +90,7 @@
                 <p class="numberFollowers">
                     <img class="upArrow" src="./images/icon-up.svg" />12 Today
                 </p>
-            </div>
+            </div> -->
         </section>
 
         <!-- <div class="attribution">

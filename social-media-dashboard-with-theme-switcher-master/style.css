@@ -37,18 +37,20 @@ dark theme */
 * {
     box-sizing: border-box;
 }
+h1, h2, h3, h4, h5, h6, p, a, span {
+    margin: 0;
+    padding: 0;
+}
 
 body {
-    background-image: url(./images/bg-mobile.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom left;
     display: grid;
-    place-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     font-family: "Inter", sans-serif;
     overflow: hidden;
     font-weight: 400;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
     /* font-weight: 700; */
 }
 
@@ -57,13 +59,24 @@ body {
 //////////////////////////////////////*/
 
 .socialDashboard {
-
+    width: 100vw;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 5vw;
+}
+.dashboardTitles {
+    border-bottom: 1px solid var(--dark_grayish_blue);
+    margin-bottom: 1rem;
+}
+.mediaHeader {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
 }
 .mediaSubHeader {
     color: var(--dark_grayish_blue);
-
-}
-.mediaSubHeader {
+    margin-bottom: 2rem;
 
 }
 .themeSwitcherContainer {
@@ -130,6 +143,7 @@ body {
 .socialIdentity {
     margin-left: 0.5rem;
     color: var(--dark_grayish_blue);
+    font-weight: 700;
 }
 .socialNumbers {
     font-size: 4rem;
