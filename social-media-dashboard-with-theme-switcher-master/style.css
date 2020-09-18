@@ -78,13 +78,12 @@ body {
     font-weight: 400;
     line-height: 1.5;
     width: auto;
-    max-width: 120rem;
+    max-width: 110rem;
     color: var(--text-color);
     background: var(--background);
     padding: 0;
     margin: 0 auto;
-
-    padding: 5vw;
+    padding: 2vw 5vw;
 }
 
 /* /////////////////////////////////////
@@ -93,9 +92,7 @@ body {
 
 .socialDashboard {
     margin: auto;
-    max-width: 120rem;
-
-    /* padding: 5vw; */
+    max-width: 110rem;
 }
 .header {
     display: flex;
@@ -105,11 +102,9 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 120rem;
-
     flex-direction: column;
     background: var(--background);
-    padding-bottom: 3rem;
-
+    padding-bottom: 1rem;
     flex-basis: 100%;
 }
 .dashboardTitles {
@@ -369,7 +364,6 @@ button:focus {
 
 @media only screen and (min-width: 62.5rem) {
     .socialMediaCards {
-        margin-top: 4rem;
         grid-template-columns: repeat(4, minmax(max-content, 1fr));
     }
     .socialMediaOverview {
