@@ -61,7 +61,20 @@ document
     .querySelector(".themeSwitcherButton")
     .addEventListener("click", function() {
         let cl = this.classList;
-        cl.contains("darkTheme") ? cl.remove("darkTheme") : cl.add("darkTheme");
+        const themeText = document.querySelector(".themeText");
+
+        cl.contains("darkTheme")
+            ? (cl.remove("darkTheme"), (themeText.innerHTML = "Light Mode"))
+            : (cl.add("darkTheme"), (themeText.innerHTML = "Dark Mode"));
+
+        const html = document.documentElement;
+        html.classList.add("colorTransition");
+        html.hasAttribute("datatheme", "dark")
+            ? html.removeAttribute("datatheme", "dark")
+            : html.setAttribute("datatheme", "dark");
+        window.setTimeout(() => {
+            html.classList.remove("colorTransition");
+        }, 500);
     });
 
 function dashboardMarkup(info) {

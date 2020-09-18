@@ -36,7 +36,7 @@
         </style>
     </head>
     <body>
-        <section class="socialDashboard">
+        <div class="header">
             <div class="dashboardTitles">
                 <h1 class="mediaHeader">Social Media Dashboard</h1>
                 <h5 class="mediaSubHeader">Total Followers: 23,004</h5>
@@ -44,15 +44,14 @@
             <div class="themeSwitcherContainer">
                 <p class="themeText">Light Mode</p>
                 <div class="themeSwitcher">
-                    <button
-                        onclick="themeSwitch()"
-                        class="themeSwitcherButton darktheme"
-                    ></button>
+                    <button class="themeSwitcherButton"></button>
                 </div>
             </div>
+        </div>
+        <section class="socialDashboard">
             <section class="socialMediaCards"></section>
-            <div class="dashboardTitles">
-                <h1 class="mediaHeader">Overview - Today</h1>
+            <div class="dashboardTitles overview">
+                <h1 class="mediaHeader ">Overview - Today</h1>
             </div>
             <section class="socialMediaOverview"></section>
         </section>
