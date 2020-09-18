@@ -80,6 +80,14 @@ body {
     font-weight: 400;
     line-height: 1.5;
     width: auto;
+    background: var(--background);
+}
+
+/* /////////////////////////////////////
+   MOBILE FIRST
+//////////////////////////////////////*/
+
+.appContainer {
     max-width: 115rem;
     color: var(--text-color);
     background: var(--background);
@@ -87,10 +95,6 @@ body {
     margin: 0 auto;
     padding: 3vw 5vw;
 }
-
-/* /////////////////////////////////////
-   MOBILE FIRST
-//////////////////////////////////////*/
 
 .socialDashboard {
     margin: auto;
