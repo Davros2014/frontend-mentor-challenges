@@ -80,12 +80,12 @@ body {
     font-weight: 400;
     line-height: 1.5;
     width: auto;
-    max-width: 115rem;
+    max-width: 110rem;
     color: var(--text-color);
     background: var(--background);
     padding: 0;
     margin: 0 auto;
-    padding: 3vw 15vw;
+    padding: 3vw 10vw;
 }
 
 /* /////////////////////////////////////
@@ -125,14 +125,14 @@ body {
     margin-bottom: 0.5rem;
     line-height: 1.15;
     flex-basis: 100%;
-    font-size: clamp(1rem, 1.6vw, 2.4rem);
+    font-size: clamp(1.6rem, 1.6vw, 2.4rem);
 }
 .dashboardTitles.overview .mediaHeader {
     margin-top: 2rem;
 }
 .mediaSubHeader {
     color: var(--subHeadText);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.2rem;
     line-height: 1.2;
 }
@@ -202,13 +202,12 @@ button:focus {
     grid-template-columns: 1fr;
     row-gap: 2rem;
     column-gap: 2.5rem;
-    margin-top: 1rem;
 }
 
 .socialPanel {
     background: var(--cardBackground);
     position: relative;
-    padding: 1.8rem;
+    padding: 1.6rem;
     margin-top: 1rem;
     border-radius: 0.8rem;
     /* border-top-left-radius: 0;
@@ -235,7 +234,7 @@ button:focus {
     width: 100%;
     border-top-left-radius: 0.8rem;
     border-top-right-radius: 0.8rem;
-    height: 0.5rem;
+    height: 0.3rem;
 }
 .facebook:before {
     background-color: var(--facebook);
@@ -265,6 +264,7 @@ button:focus {
     margin-left: 0.5rem;
     color: var(--dark_grayish_blue);
     font-weight: 700;
+    font-size: 1rem;
 }
 .socialNumbers {
     font-size: 3.5rem;
@@ -291,12 +291,13 @@ button:focus {
     vertical-align: middle;
     font-weight: 700;
     color: var(--lime-green);
+    font-size: 0.8rem;
 }
 .upArrow {
     vertical-align: middle;
     margin-right: 0.25rem;
-    margin-bottom: 0.25rem;
-    width: 0.75rem;
+    margin-bottom: 0.15rem;
+    width: 0.5rem;
 }
 
 /* /////////////////////////////////////
