@@ -75,25 +75,25 @@ function dashboardMarkup(info) {
             followersLost
         } = data;
         return `<div class="socialPanel ${socialIcon}">
-                                <div class="socialDetails">
-                                    <img
-                                        class="socialIcon"
-                                        src="./images/icon-${socialIcon}.svg"
-                                    />
-                                    <p class="socialIdentity">${socialProfile}</p>
-                                </div>
-                                <h1 class="socialNumbers">
-                                    ${followers ? followers : subscribers}
-                                </h1>
-                                <p class="followers">
-                                    ${followers ? "followers" : "subscribers"}
-                                </p>
-                                <p class="numberFollowers ${
-                                    followersToday ? "" : "negativeFollowers"
-                                }">
-                                    <img class="upArrow" src="./images/icon-${
-                                        followersToday ? "up" : "down"
-                                    }.svg" />${
+                    <div class="socialDetails">
+                        <img
+                            class="socialIcon"
+                            src="./images/icon-${socialIcon}.svg"
+                        />
+                        <p class="socialIdentity">${socialProfile}</p>
+                    </div>
+                    <h1 class="socialNumbers">
+                        ${followers ? followers : subscribers}
+                    </h1>
+                    <p class="followers">
+                        ${followers ? "followers" : "subscribers"}
+                    </p>
+                    <p class="numberFollowers ${
+                        followersToday ? "" : "negativeFollowers"
+                    }">
+                        <img class="upArrow" src="./images/icon-${
+                            followersToday ? "up" : "down"
+                        }.svg" />${
             followersToday ? followersToday : followersLost
         } Today
                                 </p>

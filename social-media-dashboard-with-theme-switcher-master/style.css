@@ -185,7 +185,7 @@ button:focus {
     background-color: var(--youtube);
 }
 
-.youtube .socialDetails {
+.socialDetails {
     display: flex;
     justify-content: space-around;
     align-items: center;
