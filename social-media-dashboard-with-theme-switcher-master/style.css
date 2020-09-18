@@ -48,13 +48,13 @@ span {
 }
 
 body {
-    background-color: var(--very_dark_blue);
+    background: var(--very_dark_blue);
     font-size: 1.4rem;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     line-height: 1.5;
     width: auto;
-    max-width: 100rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 
@@ -84,7 +84,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 2rem;
+    height: 2.4rem;
 }
 .themeText {
     font-weight: 700;
@@ -93,8 +93,8 @@ body {
 .themeSwitcher {
     position: relative;
     border-radius: 20px;
-    width: 3rem;
-    height: 1.5rem;
+    width: 4rem;
+    height: 2rem;
     background: var(--dark_grayish_blue);
     padding: 0.2rem;
     display: flex;
@@ -108,7 +108,34 @@ body {
     height: 1.2rem;
     border-radius: 100%;
     left: 0.2rem;
-    animation: 0.1s startEnd forwards ease-in;
+    cursor: pointer;
+    animation: 0.25s toTheLeft forwards ease-in;
+}
+button,
+button:focus {
+    outline: none;
+    border: none;
+}
+
+.darkTheme {
+    animation: 0.25s toTheOtherSide forwards ease-in;
+}
+
+@keyframes toTheOtherSide {
+    0% {
+        left: 0.2rem;
+    }
+    100% {
+        left: calc(4rem - 1.4rem);
+    }
+}
+@keyframes toTheLeft {
+    0% {
+        left: calc(4rem - 1.4rem);
+    }
+    100% {
+        left: 0.2rem;
+    }
 }
 
 /* SOCIAL CARDS */
@@ -129,7 +156,7 @@ body {
     border-top-right-radius: 0;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -158,15 +185,15 @@ body {
     background-color: var(--youtube);
 }
 
-.socialDetails {
+.youtube .socialDetails {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 1rem;
 }
 .socialIcon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: auto;
 }
 .socialIdentity {
     margin-left: 0.5rem;
@@ -174,9 +201,12 @@ body {
     font-weight: 700;
 }
 .socialNumbers {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 700;
     margin: 0;
+    padding: 0;
+    margin-bottom: 0;
+    vertical-align: text-bottom;
 }
 .followers {
     margin: 0;
@@ -185,6 +215,7 @@ body {
     letter-spacing: 0.3rem;
     color: var(--dark_grayish_blue);
 }
+
 .numberFollowers {
     vertical-align: middle;
     font-weight: 700;
@@ -197,13 +228,64 @@ body {
     width: 0.75rem;
 }
 
-@keyframes startEnd {
-    0% {
-        left: 0.2rem;
-    }
-    100% {
-        left: calc(100% - 1.4rem);
-    }
+/* /////////////////////////////////////
+   BOTTOM SECTION
+//////////////////////////////////////*/
+
+.socialMediaOverview {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    margin-top: 3rem;
+}
+.socialOverviewCard {
+    background: var(--very_pale_blue);
+    position: relative;
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 2.8rem 2.8rem 2rem 2.8rem;
+    display: flex;
+    justify-content: space-between;
+}
+.socialViews {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.pageViews {
+    font-weight: 700;
+    color: var(--dark_grayish_blue);
+}
+.viewsNumbers {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-top: 3rem;
+}
+.socialPercentage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.viewsPercentage.negativePerc,
+.numberFollowers.negativeFollowers {
+    color: var(--bright-red);
+}
+.overviewArrow {
+    margin: 0;
+}
+.viewsPercentage {
+    vertical-align: text-bottom;
+    font-weight: 700;
+    margin-top: 5rem;
+    color: var(--lime-green);
 }
 
 /* /////////////////////////////////////
@@ -212,6 +294,9 @@ body {
 
 @media only screen and (min-width: 62.5rem) {
     .socialMediaCards {
+        grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    }
+    .socialMediaOverview {
         grid-template-columns: repeat(4, minmax(max-content, 1fr));
     }
 }

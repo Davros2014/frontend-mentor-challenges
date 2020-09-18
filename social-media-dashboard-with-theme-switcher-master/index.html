@@ -24,10 +24,6 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <link
-            href="httpss://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
         <link href="./style.css" rel="stylesheet" />
         <style>
             .attribution {
@@ -41,32 +37,26 @@
     </head>
     <body>
         <section class="socialDashboard">
-            <div class="dashboardTitles">
-                <h1 class="mediaHeader">Social Media Dashboard</h1>
-                <h5 class="mediaSubHeader">Total Followers: 23,004</h5>
-            </div>
-            <div class="themeSwitcherContainer">
-                <p class="themeText">Light Mode</p>
-                <div class="themeSwitcher">
-                    <div class="themeSwitcherButton"></div>
+            <div class="dashboardTitlesContainer">
+                <div class="dashboardTitles">
+                    <h1 class="mediaHeader">Social Media Dashboard</h1>
+                    <h5 class="mediaSubHeader">Total Followers: 23,004</h5>
+                </div>
+                <div class="themeSwitcherContainer">
+                    <p class="themeText">Light Mode</p>
+                    <div class="themeSwitcher">
+                        <button
+                            onclick="themeSwitch()"
+                            class="themeSwitcherButton darktheme"
+                        ></button>
+                    </div>
                 </div>
             </div>
             <section class="socialMediaCards"></section>
             <div class="dashboardTitles">
                 <h1 class="mediaHeader">Overview - Today</h1>
             </div>
-            <section class="socialMediaOverview">
-                <div class="socialViews">
-                    <p class="pageViews">Page Views</p>
-                </div>
-                <div class="socialPercentage">
-                    <img class="socialIcon" src="./images/icon-facebook.svg" />
-                    <p class="viewsPercentage">
-                        <img class="upArrow" src="./images/icon-up.svg" />
-                        ${data.followersToday} 303%
-                    </p>
-                </div>
-            </section>
+            <section class="socialMediaOverview"></section>
         </section>
 
         <!-- <div class="attribution">
