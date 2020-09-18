@@ -107,12 +107,12 @@ body {
     background: var(--background);
     padding-bottom: 1rem;
     flex-basis: 100%;
-    font-size: clamp(1rem, 1.2rem, 2.4rem);
 }
 .dashboardTitles {
     border-bottom: 1px solid var(--dark_grayish_blue);
     margin-bottom: 1rem;
     width: 100%;
+    font-size: clamp(1rem, 1.2rem, 2.4rem);
 }
 .dashboardTitles.overview {
     border-bottom: none;
