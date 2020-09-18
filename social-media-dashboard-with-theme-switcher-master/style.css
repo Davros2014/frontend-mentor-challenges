@@ -26,6 +26,7 @@ html {
     --background: white;
     --cardBackground: hsl(225, 100%, 98%);
     --cardBackgroundActive: hsl(225, 100%, 95%);
+    --subHeadText: hsl(228, 12%, 44%);
 }
 /*
 dark theme */
@@ -54,6 +55,7 @@ html[dataTheme="dark"] {
     --background: hsl(230, 17%, 14%);
     --cardBackground: hsl(228, 28%, 20%);
     --cardBackgroundActive: hsl(228, 28%, 22%);
+    --subHeadText: hsl(228, 34%, 66%);
 }
 
 * {
@@ -78,12 +80,12 @@ body {
     font-weight: 400;
     line-height: 1.5;
     width: auto;
-    max-width: 110rem;
+    max-width: 115rem;
     color: var(--text-color);
     background: var(--background);
     padding: 0;
     margin: 0 auto;
-    padding: 2vw 5vw;
+    padding: 3vw 5vw;
 }
 
 /* /////////////////////////////////////
@@ -92,7 +94,6 @@ body {
 
 .socialDashboard {
     margin: auto;
-    max-width: 110rem;
 }
 .header {
     display: flex;
@@ -106,6 +107,7 @@ body {
     background: var(--background);
     padding-bottom: 1rem;
     flex-basis: 100%;
+    font-size: clamp(1rem, 1.2rem, 2.4rem);
 }
 .dashboardTitles {
     border-bottom: 1px solid var(--dark_grayish_blue);
@@ -125,7 +127,7 @@ body {
     margin-top: 2rem;
 }
 .mediaSubHeader {
-    color: var(--dark_grayish_blue);
+    color: var(--subHeadText);
     margin-bottom: 2rem;
     font-size: 1.4rem;
     line-height: 1.2;
@@ -139,7 +141,7 @@ body {
 }
 .themeText {
     font-weight: 700;
-    color: var(--dark_grayish_blue);
+    color: var(--subHeadText);
 }
 .themeSwitcher {
     position: relative;
