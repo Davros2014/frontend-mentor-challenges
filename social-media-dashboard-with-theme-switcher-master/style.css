@@ -350,7 +350,7 @@ button:focus {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    margin-top: 0rem;
+    font-size: 0.8rem;
 }
 
 .viewsPercentage.negativePerc,
@@ -363,7 +363,7 @@ button:focus {
 .viewsPercentage {
     vertical-align: text-bottom;
     font-weight: 700;
-    margin-top: 3.5rem;
+    margin-top: 3.8rem;
     color: var(--lime-green);
 }
 
