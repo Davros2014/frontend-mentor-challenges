@@ -75,29 +75,30 @@ span {
 }
 
 body {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     line-height: 1.5;
     width: auto;
+    max-width: 115rem;
+    color: var(--text-color);
     background: var(--background);
+    padding: 0;
+    margin: 0 auto;
+    padding: 3vw 15vw;
 }
 
 /* /////////////////////////////////////
    MOBILE FIRST
 //////////////////////////////////////*/
 
-.appContainer {
-    max-width: 115rem;
-    color: var(--text-color);
-    background: var(--background);
-    padding: 0;
-    margin: 0 auto;
-    padding: 3vw 5vw;
-}
+/* .appContainer {
+
+} */
 
 .socialDashboard {
     margin: auto;
+    width: 100%;
 }
 .header {
     display: flex;
@@ -106,7 +107,6 @@ body {
     z-index: 500;
     margin: 0 auto;
     width: 100%;
-    max-width: 120rem;
     flex-direction: column;
     background: var(--background);
     padding-bottom: 1rem;
@@ -116,7 +116,6 @@ body {
     border-bottom: 1px solid var(--dark_grayish_blue);
     margin-bottom: 1rem;
     width: 100%;
-    font-size: clamp(1rem, 1.2rem, 2.4rem);
 }
 .dashboardTitles.overview {
     border-bottom: none;
@@ -126,6 +125,7 @@ body {
     margin-bottom: 0.5rem;
     line-height: 1.15;
     flex-basis: 100%;
+    font-size: clamp(1rem, 1.6vw, 2.4rem);
 }
 .dashboardTitles.overview .mediaHeader {
     margin-top: 2rem;
@@ -133,7 +133,7 @@ body {
 .mediaSubHeader {
     color: var(--subHeadText);
     margin-bottom: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.2;
 }
 .themeSwitcherContainer {
@@ -146,12 +146,13 @@ body {
 .themeText {
     font-weight: 700;
     color: var(--subHeadText);
+    font-size: 1rem;
 }
 .themeSwitcher {
     position: relative;
     border-radius: 20px;
-    width: 5rem;
-    height: 2.4rem;
+    width: 3.6rem;
+    height: 1.8rem;
     background: var(--switcher);
     padding: 0.2rem;
     display: flex;
@@ -161,8 +162,8 @@ body {
 .themeSwitcherButton {
     position: absolute;
     background: var(--switcherButton);
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.4rem;
+    height: 1.4rem;
     border-radius: 100%;
     left: 0.4rem;
     cursor: pointer;
@@ -183,12 +184,12 @@ button:focus {
         left: 0.4rem;
     }
     100% {
-        left: calc(4rem - 0.9rem);
+        left: calc(4rem - 2rem);
     }
 }
 @keyframes toTheLeft {
     0% {
-        left: calc(4rem - 0.9rem);
+        left: calc(4rem - 2rem);
     }
     100% {
         left: 0.4rem;
@@ -207,7 +208,7 @@ button:focus {
 .socialPanel {
     background: var(--cardBackground);
     position: relative;
-    padding: 2.3rem;
+    padding: 1.8rem;
     margin-top: 1rem;
     border-radius: 0.8rem;
     border-top-left-radius: 0;
@@ -254,10 +255,10 @@ button:focus {
     justify-content: space-around;
     align-items: center;
     margin-bottom: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 .socialIcon {
-    width: 2rem;
+    width: 1.4rem;
     height: auto;
 }
 .socialIdentity {
@@ -266,7 +267,7 @@ button:focus {
     font-weight: 700;
 }
 .socialNumbers {
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
     padding: 0;
@@ -280,7 +281,7 @@ button:focus {
 }
 .followers {
     margin: 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.3rem;
     color: var(--dark_grayish_blue);
@@ -306,8 +307,8 @@ button:focus {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 1rem;
-    column-gap: 1.5rem;
-    margin-top: 3rem;
+    column-gap: 2.5rem;
+    margin-top: 1rem;
 }
 .socialOverviewCard {
     background: var(--cardBackground);
@@ -318,7 +319,7 @@ button:focus {
     align-items: center;
     text-align: center;
     height: auto;
-    padding: 2.8rem 2.8rem 2rem 2.8rem;
+    padding: 1.8rem 1.8rem 1rem 1.8rem;
     display: flex;
     justify-content: space-between;
     transition: background 0.2s ease-in-out;
@@ -337,17 +338,19 @@ button:focus {
 .pageViews {
     font-weight: 700;
     color: var(--dark_grayish_blue);
+    font-size: 0.8rem;
 }
 .viewsNumbers {
     font-weight: 700;
-    font-size: 3.5rem;
-    margin-top: 3rem;
+    font-size: 2.2rem;
+    margin-top: 2.8rem;
 }
 .socialPercentage {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 0rem;
 }
 
 .viewsPercentage.negativePerc,
@@ -360,7 +363,7 @@ button:focus {
 .viewsPercentage {
     vertical-align: text-bottom;
     font-weight: 700;
-    margin-top: 5rem;
+    margin-top: 3.5rem;
     color: var(--lime-green);
 }
 
