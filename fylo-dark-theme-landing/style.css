@@ -131,7 +131,7 @@ p {
     background-position: top center;
 }
 .subHeader {
-    font-size: clamp(2.2rem, 2.4vw, 3rem);
+    font-size: clamp(2.2rem, 2.4vw, 2.45rem);
     line-height: 1.25;
     text-align: center;
     margin: 0 auto;
@@ -140,7 +140,7 @@ p {
     margin-bottom: 1.5rem;
 }
 .bodyLarge {
-    font-size: clamp(1.9rem, 2vw, 2.4rem);
+    font-size: clamp(1.7rem, 2vw, 1.85rem);
     line-height: 1.5;
     text-align: center;
     font-weight: 300;
@@ -167,17 +167,16 @@ p {
 /* PRODUCT DETAILS SECTION */
 .productDetailsContainer {
     display: grid;
-    padding-top: 17rem;
     grid-template-columns: 1fr;
     row-gap: 2rem;
     column-gap: 2.5rem;
     margin-bottom: 20rem;
+    padding-top: 20rem;
 }
 .prodImage {
-    width: 16vw;
-    max-width: 11rem;
-    min-width: 7rem;
-    margin-bottom: 2.4rem;
+    min-height: 5vw;
+    /* min-width: 7rem; */
+    margin-bottom: 1rem;
 }
 .productDetails {
     display: flex;
@@ -186,18 +185,19 @@ p {
     justify-content: space-around;
     margin-bottom: 13rem;
 }
-#security.prodImage {
-    width: 7rem;
+/* #security .prodImage {
+    max-height: 8vw;
 }
-#anyFile.prodImage {
-    width: 12rem;
-}
+#anyFile .prodImage {
+    width: 10rem;
+} */
 
 /* STAY PRODUCTIVE SECTION */
 
 .stayProductiveImg {
     /* background: green; */
     margin-bottom: 5rem;
+    margin-top: 12rem;
 }
 .stayProductive .subHeader,
 .stayProductive .bodyLarge {
@@ -262,14 +262,16 @@ p {
 }
 .testimonialContainer {
     background: var(--testimonialsBG);
-    padding: 4rem 3rem 3rem 3rem;
-    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    padding: 4rem 4rem 3rem 4rem;
     line-height: 2;
     text-align: left;
     font-weight: 300;
     margin: 0 auto;
     border-radius: 5px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+}
+.quote {
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
 }
 .testimonialInfo {
     display: flex;
@@ -335,10 +337,16 @@ p {
 }
 .companyDetails {
     padding-top: 30rem;
+    padding-bottom: 5rem;
 }
-/* .companyInfo {
-    margin-bottom: 10rem;
-} */
+.companyInfo {
+    display: flex;
+    flex-direction: column;
+}
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+}
 .companyInfoContainer {
     display: flex;
     margin-bottom: 2rem;
@@ -352,14 +360,14 @@ p {
 .phone,
 .email {
     height: auto;
-    font-size: clamp(2rem, 4vw, 2.4rem);
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
     line-height: 1.5;
     margin-left: 4rem;
 }
 .locationIcon,
 .phoneIcon,
 .emailIcon {
-    font-size: clamp(2rem, 4vw, 2.4rem);
+    font-size: clamp(2rem, 4vw, 1.8rem);
     margin-top: 0.5rem;
     width: 3rem;
     text-align: center;
@@ -376,14 +384,18 @@ footer {
     background: var(--footerBG);
 }
 .footerNav {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+    column-gap: 2.5rem;
+    margin-top: 5rem;
 }
 .footerMenuItem {
-    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
     margin-bottom: 2rem;
 }
 .socialNav {
+    margin-top: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -417,6 +429,7 @@ footer {
     padding: 5rem 0;
     text-align: center;
     font-size: 1rem;
+    border-top: 1px solid var(--cyan);
 }
 .attribution a {
     color: var(--cyan);
@@ -456,8 +469,8 @@ footer {
         max-width: 20vw;
     }
     .bodyLarge {
-        max-width: 45vw;
-        max-width: 50ch;
+        max-width: 35vw;
+        max-width: 45ch;
     }
     body {
         background: var(--signUpBG);
@@ -469,7 +482,8 @@ footer {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -25%;
+        bottom: 0;
+        transform: translateY(10%);
         right: 0;
         width: 100%;
         height: 100%;
@@ -506,6 +520,44 @@ footer {
     .earlyAccessForm input {
         margin-right: 1rem;
         margin-left: 1rem;
+    }
+    .companyInfo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .companyInfoAddress,
+    .emailPhoneContainer,
+    .footerNav,
+    .socialNav {
+        flex-basis: 0 1 auto;
+        margin-right: 4rem;
+    }
+    .companyInfoAddress .address {
+        width: 30vw;
+    }
+    .footerNav {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+    }
+    .footerNavList {
+        width: 10vw;
+    }
+    .footerLogo {
+        max-width: 15rem;
+        margin-right: 2rem;
+    }
+    .footerInfo {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .footerNavList {
+        margin-left: 3rem;
+    }
+    .footerNav {
+        margin-top: 0;
+    }
+    .socialNav {
+        margin-top: 0;
+        margin-left: 2rem;
     }
 }
 
