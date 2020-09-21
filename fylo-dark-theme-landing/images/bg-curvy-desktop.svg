@@ -1,1 +1,10 @@
-<svg width="1440" height="449" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h1454v449H0z"/></defs><g transform="translate(-14)" fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M14 413.954c90.836-5.359 176.206-50.375 256.111-135.046C389.968 151.9 364.01 105.164 563.005 148.686 762 192.207 745.05 163.699 873 63.13c127.95-100.57 211-77.554 289 44.667 78 122.222 151 162.895 284 207.778 88.667 29.921 92.03 848.285 10.091 2455.09H14V413.956z" fill="#181F2B" mask="url(#b)"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1440px" height="449.008px" viewBox="0.083 0 1440 449.008" enable-background="new 0.083 0 1440 449.008"
+	 xml:space="preserve">
+<path fill="#181F2B" d="M1440.024,320.606c-2.567-2.415-5.213-4.11-7.941-5.031c-133-44.884-206-85.556-284-207.778
+	c-78-122.221-161.05-145.237-289-44.667c-127.95,100.569-111,129.077-309.996,85.556C350.092,105.164,376.05,151.9,256.193,278.908
+	C176.289,363.579,90.918,408.595,0.083,413.954v0.002v35.052h1439.942V320.606z"/>
+</svg>

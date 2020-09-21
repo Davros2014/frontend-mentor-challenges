@@ -1,0 +1,513 @@
+/* /////////////////////////////////////
+   GLOBAL VARIABLES
+//////////////////////////////////////*/
+
+html {
+    --signUpBG: hsl(217, 28%, 15%);
+    --mainBG: hsl(218, 28%, 13%);
+    --footerBG: hsl(216, 53%, 9%);
+    --testimonialsBG: hsl(219, 30%, 18%);
+
+    /* ACCENT COLORS */
+    --cyan: hsl(176, 68%, 64%);
+    --blue: hsl(198, 60%, 50%);
+
+    /* WHITE */
+    --white: hsl(0, 0%, 100%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 62.5%;
+}
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    color: var(--white);
+    font-size: 1.6rem;
+    background: linear-gradient(to top, var(--mainBG) 90%, var(--signUpBG) 10%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+span {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* :root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark: hsl(229, 57%, 11%);
+} */
+
+/* /////////////////////////////////////
+   MOBILE FIRST
+//////////////////////////////////////*/
+
+.appContainer,
+.introContainer,
+.companyDetails {
+    padding: 0 5vw;
+    height: 100%;
+}
+.appContainer {
+    background: var(--mainBG);
+}
+
+/* ///////////// HEADER /////////////*/
+.fyloHeader {
+    margin-bottom: 8rem;
+    padding-top: 4rem;
+}
+.navLogo {
+    width: 20vw;
+    max-width: 15rem;
+}
+.fyloNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fyloNavList {
+    display: flex;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+}
+.fyloMenuItem {
+    font-size: 2rem;
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    /* font-size: 2vw; */
+    margin-left: 3rem;
+}
+
+/* ///////////// SECTION - HERO /////////////*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.mainImg {
+    max-width: 100%;
+    padding: 0 2rem;
+    position: relative;
+}
+.mainHeader {
+    font-size: 4rem;
+    font-size: clamp(3.2rem, 3vw, 4rem);
+    line-height: 1.45;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+.hero .mainHeader::before {
+    content: "";
+    position: absolute;
+    top: 45vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(./images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+}
+.subHeader {
+    font-size: clamp(2.2rem, 2.4vw, 3rem);
+    line-height: 1.25;
+    text-align: center;
+    margin: 0 auto;
+
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+.bodyLarge {
+    font-size: clamp(1.9rem, 2vw, 2.4rem);
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 300;
+    width: 95%;
+    margin: 0 auto;
+}
+.mainButton {
+    text-align: center;
+    font-weight: 300;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--cyan), var(--blue));
+    padding: 2rem 4.4rem;
+    font-size: clamp(1.25rem, 1.2vw, 2.6rem);
+    color: var(--white);
+    /* margin-bottom: 2rem; */
+    margin-top: 3rem;
+    outline: none;
+    border: none;
+    letter-spacing: 1.01;
+}
+
+/* PRODUCT DETAILS SECTION */
+.productDetailsContainer {
+    display: grid;
+    padding-top: 17rem;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    column-gap: 2.5rem;
+    margin-bottom: 20rem;
+}
+.prodImage {
+    width: 16vw;
+    max-width: 11rem;
+    min-width: 7rem;
+    margin-bottom: 2.4rem;
+}
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 13rem;
+}
+#security.prodImage {
+    width: 7rem;
+}
+#anyFile.prodImage {
+    width: 12rem;
+}
+
+/* STAY PRODUCTIVE SECTION */
+
+.stayProductiveImg {
+    /* background: green; */
+    margin-bottom: 5rem;
+}
+.stayProductive .subHeader,
+.stayProductive .bodyLarge {
+    text-align: left;
+}
+
+.stayProductive .bodyLarge {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+.mainLink {
+    margin-top: 4rem;
+    font-size: clamp(1.6rem, 1.25vw, 2.6rem);
+    border-bottom: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding-bottom: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+}
+.flexyDesktop .mainHeader {
+    display: none;
+}
+.flexyDesktop .subHeader {
+    display: block;
+}
+.linkIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+    background: var(--cyan);
+    border-radius: 100%;
+    margin-left: 1rem;
+    color: black;
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+    text-align: center;
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+    margin-top: 20rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    padding-bottom: 35rem;
+}
+.testimonials::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: 10vw;
+    width: 3rem;
+    height: 7rem;
+    transform: translateX(-50%);
+    background-image: url(./images/bg-quotes.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
+    z-index: 4;
+}
+.testimonialContainer {
+    background: var(--testimonialsBG);
+    padding: 4rem 3rem 3rem 3rem;
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    line-height: 2;
+    text-align: left;
+    font-weight: 300;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+}
+.testimonialInfo {
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+}
+.testimonialDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.5rem;
+}
+.teamMemberPic {
+    width: 7vw;
+    height: auto;
+    border-radius: 100%;
+    max-width: 5.5rem;
+}
+.teamMemberName {
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+}
+.position {
+    font-weight: 300;
+    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
+    line-height: 1.5;
+}
+
+/* EARLY ACCESS SECTION */
+.earlyAccessContainer {
+    position: relative;
+}
+.earlyAccess {
+    background: var(--signUpBG);
+    padding: 2rem;
+    padding-bottom: 4rem;
+    width: 90vw;
+    margin: 0 auto;
+    background: var();
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 10px rgba(0, 0, 0, 0.075);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.earlyAccessForm {
+    display: flex;
+    flex-direction: column;
+}
+.earlyAccess .emailInput {
+    background: var(--white);
+    width: 90%;
+}
+.earlyAccess .mainButton {
+    width: 90%;
+}
+.emailInput::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 1.4rem;
+}
+.companyDetails {
+    padding-top: 30rem;
+}
+/* .companyInfo {
+    margin-bottom: 10rem;
+} */
+.companyInfoContainer {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.footerLogo {
+    width: 30vw;
+    max-width: 20rem;
+    margin-bottom: 5rem;
+}
+.address,
+.phone,
+.email {
+    height: auto;
+    font-size: clamp(2rem, 4vw, 2.4rem);
+    line-height: 1.5;
+    margin-left: 4rem;
+}
+.locationIcon,
+.phoneIcon,
+.emailIcon {
+    font-size: clamp(2rem, 4vw, 2.4rem);
+    margin-top: 0.5rem;
+    width: 3rem;
+    text-align: center;
+}
+.locationIcon {
+    margin-left: 1rem;
+}
+
+/* FOOTER SECTION */
+
+footer {
+    margin: 0;
+    padding: 0;
+    background: var(--footerBG);
+}
+.footerNav {
+    display: flex;
+    flex-direction: column;
+}
+.footerMenuItem {
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    margin-bottom: 2rem;
+}
+.socialNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.socialNavList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.socialMenuItem {
+    border: 1px solid var(--cyan);
+    border-radius: 100%;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+.socialIcon {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    color: var(--cyan);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+}
+.attribution {
+    padding: 5rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+.attribution a {
+    color: var(--cyan);
+    font-size: 1rem;
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+@media only screen and (min-width: 62.5rem) {
+    .productDetailsContainer {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        max-width: 75vw;
+        margin: 0 auto;
+    }
+    .stayProductive {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .flexyDesktop {
+        margin-left: 5rem;
+    }
+    .flexyDesktop .subHeader {
+        display: none;
+    }
+    .flexyDesktop .mainHeader {
+        display: block;
+        text-align: left;
+    }
+    .subHeader {
+        max-width: 50vw;
+    }
+    .mainButton {
+        max-width: 20vw;
+    }
+    .bodyLarge {
+        max-width: 45vw;
+        max-width: 50ch;
+    }
+    body {
+        background: var(--signUpBG);
+    }
+    .hero .mainHeader::before {
+        display: none;
+    }
+    .introContainer::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -25%;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url(./images/bg-curvy-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom center;
+    }
+    .testimonials {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+    .testimonials::before {
+        top: -2rem;
+        left: 3vw;
+        width: 5rem;
+        height: 9rem;
+        transform: translateX(-50%);
+        background-image: url(./images/bg-quotes.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+        z-index: 4;
+    }
+    .earlyAccess {
+        width: 60vw;
+    }
+    .earlyAccessForm {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .earlyAccessForm button,
+    .earlyAccessForm input {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+@media only screen and (min-width: 75rem) {
+}
