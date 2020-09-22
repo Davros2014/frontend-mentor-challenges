@@ -68,7 +68,7 @@ p {
     background-position: top left;
     display: flex;
     align-content: center;
-    padding: 6rem 3rem 15rem 3rem;
+    padding: 3rem 3rem 15rem 3rem;
     text-align: center;
     height: 35vh;
     box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.35);
@@ -80,13 +80,13 @@ p {
 .trackerForm {
     display: flex;
     justify-content: space-around;
-    height: 6rem;
+    height: 4rem;
     margin: 0 auto;
     background: white;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
-    width: 40vw;
+    width: 80vw;
     margin-top: 2rem;
     box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.075);
 }
@@ -94,7 +94,6 @@ p {
     /* flex-grow: 1; */
     border: none;
     font-size: clamp(1.2rem, 2vw, 1.6rem);
-
     width: 90%;
     color: var(--veryDarkGrey);
     padding-left: 2rem;
@@ -115,7 +114,6 @@ p {
     transition: all 0.125s ease-in-out;
     background: var(--headerBlue);
 }
-
 .trackerOutputContainer {
     position: relative;
 }
@@ -124,43 +122,44 @@ p {
     grid-template-columns: 1fr;
     row-gap: 2rem;
     column-gap: 3rem;
-    grid-gap: 3.5rem;
-    padding: 5rem 4rem;
+    grid-gap: 2rem;
+    padding: 3rem 2rem;
     width: 80vw;
     background: white;
     margin: 0 auto;
     position: absolute;
-    top: 0;
+    top: -5rem;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
     box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.075);
     color: hsl(0, 0%, 59%);
+    text-align: center;
 }
 .trackerOutputTitle {
-    font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
     letter-spacing: 0.15rem;
     text-transform: uppercase;
     font-weight: 700;
 }
-
 .outputContainer {
     border-right: none;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--darkGrey);
 }
 .outputContainer:last-child {
     border-bottom: none;
 }
+.outputContainer br {
+    display: none;
+}
 .output,
 .output span {
-    font-size: clamp(2.4rem, 1.75vw, 3.6rem);
+    font-size: clamp(1.8rem, 1.75vw, 3.6rem);
     color: var(--veryDarkGrey);
     font-weight: 700;
     letter-spacing: 0;
 }
 .output {
-    padding-top: 1.6rem;
+    padding-top: 0.75rem;
 }
 .output span {
     font-weight: 700;
@@ -170,10 +169,8 @@ p {
 
 #mapid {
     height: 59vh;
-
     z-index: -1;
 }
-
 #mapid.is-dragging {
     z-index: 2;
 }
@@ -199,8 +196,15 @@ p {
 //////////////////////////////////////*/
 
 @media only screen and (min-width: 62.5rem) {
+    .trackerHeader {
+        padding-top: 6rem;
+    }
     .trackerOutput {
         grid-template-columns: repeat(4, minmax(200px, 1fr));
+        top: 0;
+        text-align: left;
+        grid-gap: 3.5rem;
+        padding: 5rem 4rem;
     }
     .outputContainer {
         border-right: 1px solid var(--darkGrey);
@@ -208,6 +212,16 @@ p {
     }
     .outputContainer:last-child {
         border-right: none;
+    }
+    .trackerForm {
+        width: 40vw;
+        height: 6rem;
+    }
+    .outputContainer br {
+        display: inline-block;
+    }
+    .output {
+        padding-top: 1.6rem;
     }
 }
 

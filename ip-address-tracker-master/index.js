@@ -1,3 +1,33 @@
+const successCallback = position => {};
+
+if ("geolocation" in navigator) {
+    console.log("geolocation available");
+    navigator.geolocation.getCurrentPosition(successCallback => {
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+
+        var mymap = L.map("mapid").setView([lat, long], 13);
+
+        L.tileLayer(
+            "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+            {
+                maxZoom: 18,
+                attribution:
+                    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                id: "mapbox/streets-v11",
+                tileSize: 512,
+                zoomOffset: -1
+            }
+        ).addTo(mymap);
+    });
+} else {
+    console.log("geolocation not available");
+}
+
 // console.log("yo");
 //
 // // Set up our HTTP request
@@ -40,44 +70,23 @@
 //         console.warn("Something went wrong.", err);
 //     });
 
-// let secrets = require("./secrets");
-//
-// const getDataButton = document.querySelector("searchButton");
-// getDataButton
-//     .addEventListener("click", event => {
-//         let ipAddress = document.querySelector("ip");
-//         var API_KEY = secrets.API_KEY;
-//         let url =
-//             "https://geo.ipify.org/api/v1?apiKey=" +
-//             API_KEY +
-//             "&ipAddress=" +
-//             ipAddress;
-//         fetch(url, {
-//             mode: "no-cache"
-//         })
-//             .then(response => response.json())
-//             .then(data => {
-//                 console.log("data", data);
-//             });
-//     })
-//     .catch(err => console.error(err));
+// import secrets from "./secrets";
 
-// var mymap = L.map("mapid").setView([51.505, -0.09], 13);
-//
-//
-//
-// L.tileLayer(
-//     "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-//     {
-//         attribution:
-//             'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-//         maxZoom: 18,
-//         id: "mapbox/streets-v11",
-//         tileSize: 512,
-//         zoomOffset: -1,
-//         accessToken: "your.mapbox.access.token"
-//     }
-// ).addTo(mymap);
+const getDataButton = document.querySelector("searchButton");
+getDataButton
+    .addEventListener("click", event => {
+        let ipAddress = document.querySelector("ip");
+        var api_key = "";
+        let url = `https://geo.ipify.org/api/v1?apiKey=${api_key}&ipAddress=${ipAddress}`;
+        fetch(url, {
+            mode: "no-cache"
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("data", data);
+            });
+    })
+    .catch(err => console.error(err));
 
 // let secrets = require("./secrets");
 //
