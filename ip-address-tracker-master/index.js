@@ -39,3 +39,40 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         // There was an error
         console.warn("Something went wrong.", err);
     });
+
+const getDataButton = document.querySelector("searchButton");
+getDataButton.addEventListener('click', e => {
+    fetch('https://geo.ipify.org/api/v1?apiKey=at_IfnfIuSXWZzJJmnKxnQsGKHGdcAA0&ipAddress=8.8.8.8
+', {
+    mode: 'no-cache'
+   })
+    .then(response => response.json())
+    .then(data => {
+      data.filter(key => {
+    	  let quote = document.getElementById('quote')
+          let author = document.getElementById('author')
+     	  quote.innerHTML = key.content
+          author.innerHTML = key.title
+      })
+    })
+    .catch(err => console.error(err))
+
+
+
+let secrets = require("./secrets");
+
+    const getDataButton = document.querySelector("searchButton");
+    getDataButton.addEventListener('click', e => {
+        var ip = "8.8.8.8";
+    var api_key = secrets.API_KEY;
+    $(function () {
+       $.ajax({
+           url: "https://geo.ipify.org/api/v1",
+           dataType: "jsonp",
+           data: {apiKey: api_key, ipAddress: ip},
+           success: function(data) {
+               $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
+           }
+       });
+    });
+        .catch(err => console.error(err))

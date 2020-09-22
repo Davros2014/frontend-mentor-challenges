@@ -10,6 +10,8 @@ html {
     --cyan: hsl(176, 68%, 64%);
     --blue: hsl(198, 60%, 50%);
 
+    --headerBlue: #4951ac;
+
     /* WHITE */
     --white: hsl(0, 0%, 100%);
 }
@@ -76,36 +78,41 @@ p {
 }
 .trackerForm {
     display: flex;
-    justify-content: space-between;
-    height: 5rem;
+    justify-content: space-around;
+    height: 6rem;
     margin: 0 auto;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
     position: relative;
-    width: 50vw;
+    width: 40vw;
     margin-top: 2rem;
     box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.075);
 }
 .trackerInput {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     border: none;
-    background: transparent;
-    padding: 0 0.5rem;
     font-size: clamp(1.2rem, 2vw, 1.6rem);
 
-    left: 10px;
-    opacity: 0;
     width: 90%;
-    cursor: pointer;
+    color: var(--veryDarkGrey);
+    padding-left: 2rem;
+}
+.trackerInput::placeholder {
+    color: var(--darkGrey);
 }
 .searchButton {
-    background: var(--varyDarkGrey);
+    background: var(--veryDarkGrey);
     width: 10%;
     height: auto;
-    background: var(--veryDarkGrey);
     outline: none;
     border: none;
+    transition: all 0.125s ease-in-out;
+    cursor: pointer;
+}
+.searchButton:hover {
+    transition: all 0.125s ease-in-out;
+    background: var(--headerBlue);
 }
 
 .trackerOutputContainer {

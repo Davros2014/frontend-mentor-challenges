@@ -28,7 +28,12 @@ body {
     font-family: "Open Sans", sans-serif;
     color: var(--white);
     font-size: 1.6rem;
-    background: linear-gradient(to top, var(--mainBG) 90%, var(--signUpBG) 10%);
+    background: linear-gradient(
+        to top,
+        var(--mainBG) calc(100% - 100vh),
+        var(--signUpBG) 100vh
+    );
+    position: relative;
 }
 
 h1,
@@ -63,7 +68,7 @@ p {
 .introContainer,
 .companyDetails {
     padding: 0 5vw;
-    height: 100%;
+    position: relative;
 }
 .appContainer {
     background: var(--mainBG);
@@ -71,7 +76,6 @@ p {
 
 /* ///////////// HEADER /////////////*/
 .fyloHeader {
-    margin-bottom: 8rem;
     padding-top: 4rem;
 }
 .navLogo {
@@ -101,6 +105,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 .mainImg {
     max-width: 100%;
@@ -117,18 +122,18 @@ p {
     margin-top: 5rem;
     margin-bottom: 2rem;
 }
-.hero .mainHeader::before {
+.introContainer::before {
     content: "";
     position: absolute;
-    top: 45vh;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
     background-image: url(./images/bg-curvy-mobile.svg);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top center;
+    background-position: bottom;
+    background-size: cover;
 }
 .subHeader {
     font-size: clamp(2.2rem, 2.4vw, 2.45rem);
@@ -208,6 +213,9 @@ p {
     margin-bottom: 2rem;
     width: 100%;
 }
+.flexyDesktop .bodyLarge {
+    text-align: left;
+}
 .mainLink {
     margin-top: 4rem;
     font-size: clamp(1.6rem, 1.25vw, 2.6rem);
@@ -221,7 +229,7 @@ p {
     display: none;
 }
 .flexyDesktop .subHeader {
-    display: block;
+    display: inline-block;
 }
 .linkIcon {
     width: 1.8rem;
@@ -449,7 +457,6 @@ footer {
     .stayProductive {
         display: flex;
         align-items: center;
-        width: 80%;
         margin: 0 auto;
     }
     .flexyDesktop {
@@ -459,8 +466,13 @@ footer {
         display: none;
     }
     .flexyDesktop .mainHeader {
-        display: block;
+        display: inline-block;
         text-align: left;
+        width: 100%;
+    }
+    .mainHeader {
+        width: 50vw;
+        padding: 0;
     }
     .subHeader {
         max-width: 50vw;
@@ -469,7 +481,7 @@ footer {
         max-width: 20vw;
     }
     .bodyLarge {
-        max-width: 35vw;
+        width: 50vw;
         max-width: 45ch;
     }
     body {
@@ -483,15 +495,13 @@ footer {
         position: absolute;
         left: 0;
         bottom: 0;
-        transform: translateY(10%);
-        right: 0;
         width: 100%;
         height: 100%;
         z-index: -1;
         background-image: url(./images/bg-curvy-desktop.svg);
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: bottom center;
+        background-position: bottom;
     }
     .testimonials {
         grid-template-columns: repeat(3, minmax(300px, 1fr));
@@ -524,6 +534,7 @@ footer {
     .companyInfo {
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
     }
     .companyInfoAddress,
     .emailPhoneContainer,
@@ -533,7 +544,7 @@ footer {
         margin-right: 4rem;
     }
     .companyInfoAddress .address {
-        width: 30vw;
+        /* width: 20vw; */
     }
     .footerNav {
         grid-template-columns: repeat(2, minmax(100px, 1fr));
