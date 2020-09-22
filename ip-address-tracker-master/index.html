@@ -30,10 +30,61 @@
         <link href="./style.css" rel="stylesheet" />
     </head>
     <body>
-        IP Address Tracker Search for any IP address or domain IP Address
-        Location Timezone UTC
+        <section class="trackerHeader">
+            <h1 class="mainHeader">IP Address Tracker</h1>
+            <div class="trackerForm">
+                <input
+                    type="text"
+                    class="trackerInput"
+                    aria-label="search"
+                    placeholder="Search for any IP address or domain"
+                />
+                <button type="submit" class="searchButton">
+                    <img
+                        src="./images/icon-arrow.svg"
+                        alt=""
+                        class="searchArrow"
+                    />
+                </button>
+            </div>
+        </section>
+        <section class="trackerOutputContainer">
+            <div class="trackerOutput">
+                <div class="outputContainer">
+                    <h5 id="ipAddress" class="trackerOutputTitle">
+                        IP Address
+                    </h5>
+                    <h2 class="output">192.212.174.101</h2>
+                </div>
+                <div class="outputContainer">
+                    <h5 id="locationAddress" class="trackerOutputTitle">
+                        Location
+                    </h5>
+                    <h2 class="output">
+                        Brooklyn, NY<br />
+                        10001
+                    </h2>
+                </div>
+                <div class="outputContainer">
+                    <h5 id="timezoneAddress" class="trackerOutputTitle">
+                        Timezone
+                    </h5>
+                    <h2 class="output"><span>UTC</span>-05:00</h2>
+                </div>
+                <div class="outputContainer">
+                    <h5 id="isp" class="trackerOutputTitle">ISP</h5>
+                    <h2 class="output">
+                        SpaceX<br />
+                        Starlink
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <section class="mapContainer">
+            <div class="mapOutput"></div>
+        </section>
+
         <!-- add offset value dynamically using the API -->
-        ISP
 
         <div class="attribution">
             Challenge by
