@@ -70,11 +70,12 @@ p {
     align-content: center;
     padding: 6rem 3rem 15rem 3rem;
     text-align: center;
+    height: 35vh;
+    box-shadow: 0px 0px 6px 8px rgba(0, 0, 0, 0.35);
 }
 .mainHeader {
     font-size: clamp(2.4rem, 2vw, 3.2rem);
     color: white;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
 }
 .trackerForm {
     display: flex;
@@ -165,13 +166,28 @@ p {
     font-weight: 700;
 }
 
+/* ///////////// MAP SECTION /////////////*/
+
+#mapid {
+    height: 59vh;
+
+    z-index: -1;
+}
+
+#mapid.is-dragging {
+    z-index: 2;
+}
+
 /* ///////////// FOOTER SECTION /////////////*/
 
 .attribution {
-    padding: 5rem 0;
+    padding: 2.5rem 0 3.5rem 0;
     text-align: center;
     font-size: 1rem;
     border-top: 1px solid var(--cyan);
+    background: var(--veryDarkGrey);
+    height: 5rem;
+    color: white;
 }
 .attribution a {
     color: var(--cyan);
