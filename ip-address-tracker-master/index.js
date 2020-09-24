@@ -1,107 +1,95 @@
-const successCallback = position => {};
+let mymap; // iniitalise map variable
+let initialLocation = "195.192.168.206";
 
-if ("geolocation" in navigator) {
-    console.log("geolocation available");
-    navigator.geolocation.getCurrentPosition(successCallback => {
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
-        let lat = position.coords.latitude;
-        let long = position.coords.longitude;
+locateByIP(initialLocation);
 
-        var mymap = L.map("mapid").setView([lat, long], 13);
+document.querySelector(".searchButton").addEventListener("click", event => {
+    event.preventDefault();
+    let userInput = document.querySelector("input[name='ip']").value;
+    console.log("userInput", userInput);
+    locateByIP(userInput);
+    document.querySelector("input[name='ip']").value = "";
+    // if (!validateIPaddress(userInput)) {
+    //     document.querySelector("input[name='ip']").value = "";
+    //     return;
+    // }
+    if (userInput === "") {
+        const error = document.querySelector("errorContainer");
+        return error.innerHtml(
+            "Please provide valid IP address or domain name"
+        );
+    }
+});
 
-        L.tileLayer(
-            "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
-            {
-                maxZoom: 18,
-                attribution:
-                    'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                id: "mapbox/streets-v11",
-                tileSize: 512,
-                zoomOffset: -1
-            }
-        ).addTo(mymap);
-    });
-} else {
-    console.log("geolocation not available");
+async function locateByIP(input) {
+    let domianInput;
+    let ipInput;
+    if ((input.match(/./g) || []).length !== 3) {
+        domianInput = input;
+    } else {
+        ipInput = input;
+    }
+
+    // api call
+    let api_key = "at_IfnfIuSXWZzJJmnKxnQsGKHGdcAA0";
+    try {
+        const response = await fetch(
+            `https://geo.ipify.org/api/v1?apiKey=${api_key}&ipAddress=${ipInput}&domain=${domianInput}`
+        );
+        const data = await response.json();
+        const { city, country, timezone, lat, lng, postalCode } = data.location;
+        document.getElementById("ipAddress").innerHTML = data.ip;
+        document.getElementById(
+            "locationAddress"
+        ).innerHTML = `${city}, ${country},<br /> ${postalCode}`;
+        document.getElementById(
+            "timezoneAddress"
+        ).innerHTML = `<span>UTC</span> ${timezone}`;
+        document.getElementById("isp").innerHTML = data.isp;
+
+        addToMap(lat, lng);
+    } catch (err) {
+        let errorMessage =
+            "<p class='errorContainer'> The details you have entered are not valid, please try again </p>";
+        console.log("errorMessage", errorMessage);
+
+        document
+            .querySelector(".trackerForm")
+            .insertAdjacentHTML("afterend", errorMessage);
+    }
 }
 
-// console.log("yo");
-//
-// // Set up our HTTP request
-// var xhr = new XMLHttpRequest();
-//
-// // Set up our HTTP request
-// var xhr = new XMLHttpRequest();
-//
-// // Setup our listener to process completed requests
-// xhr.onload = function() {
-//     // Process our return data
-//     if (xhr.status >= 200 && xhr.status < 300) {
-//         // This will run when the request is successful
-//         console.log("success!", xhr);
-//     } else {
-//         // This will run when it's not
-//         console.log("The request failed!");
-//     }
-//
-//     // This will run either way
-//     // All three of these are optional, depending on what you're trying to do
-//     console.log("This always runs...");
-// };
-//
-// // Create and send a GET request
-// // The first argument is the post type (GET, POST, PUT, DELETE, etc.)
-// // The second argument is the endpoint URL
-// xhr.open("GET", "https://jsonplaceholder.typicode.com/posts");
-// xhr.send();
-//
-// // or using fetch
-//
-// fetch("https://jsonplaceholder.typicode.com/posts")
-//     .then(function(response) {
-//         // The API call was successful!
-//         console.log("success!", response);
-//     })
-//     .catch(function(err) {
-//         // There was an error
-//         console.warn("Something went wrong.", err);
-//     });
+const validateIPaddress = ipaddress => {
+    if (
+        /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
+            ipaddress
+        )
+    ) {
+        return true;
+    }
+    alert("You have entered an invalid IP address, please try again");
+    return false;
+};
 
-// import secrets from "./secrets";
+const addToMap = (lat, long) => {
+    if (mymap != undefined) {
+        mymap.remove();
+    }
+    mymap = L.map("mapid").setView([lat, long], 13);
 
-const getDataButton = document.querySelector("searchButton");
-getDataButton
-    .addEventListener("click", event => {
-        let ipAddress = document.querySelector("ip");
-        var api_key = "";
-        let url = `https://geo.ipify.org/api/v1?apiKey=${api_key}&ipAddress=${ipAddress}`;
-        fetch(url, {
-            mode: "no-cache"
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log("data", data);
-            });
-    })
-    .catch(err => console.error(err));
+    L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw",
+        {
+            maxZoom: 18,
+            attribution:
+                'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: "mapbox/streets-v11",
+            tileSize: 512,
+            zoomOffset: -1
+        }
+    ).addTo(mymap);
 
-// let secrets = require("./secrets");
-//
-//     const getDataButton = document.querySelector("searchButton");
-//     getDataButton.addEventListener('click', e => {
-//         var ip = "8.8.8.8";
-//     var api_key = secrets.API_KEY;
-//     $(function () {
-//        $.ajax({
-//            url: "https://geo.ipify.org/api/v1",
-//            dataType: "jsonp",
-//            data: {apiKey: api_key, ipAddress: ip},
-//            success: function(data) {
-//                $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
-//            }
-//        });
-//     });
-//         .catch(err => console.error(err))
+    var marker = L.marker([lat, long]).addTo(mymap);
+};

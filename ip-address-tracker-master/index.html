@@ -43,13 +43,14 @@
     <body>
         <section class="trackerHeader">
             <h1 class="mainHeader">IP Address Tracker</h1>
-            <form class="trackerForm">
+            <div class="trackerForm">
                 <input
                     id="ip"
+                    name="ip"
                     type="text"
                     class="trackerInput"
                     aria-label="search"
-                    placeholder="Search for any IP address or domain"
+                    placeholder="Search for any IP address"
                 />
                 <button type="submit" class="searchButton">
                     <img
@@ -58,41 +59,46 @@
                         class="searchArrow"
                     />
                 </button>
-            </form>
+            </div>
         </section>
         <section class="trackerOutputContainer">
             <div class="trackerOutput">
                 <div class="outputContainer">
-                    <h5 id="ipAddress" class="trackerOutputTitle">
+                    <h5 class="trackerOutputTitle">
                         IP Address
                     </h5>
-                    <h2 class="output">192.212.174.101</h2>
+                    <h2 id="ipAddress" class="output">192.212.174.101</h2>
                 </div>
                 <div class="outputContainer">
-                    <h5 id="locationAddress" class="trackerOutputTitle">
+                    <h5 class="trackerOutputTitle">
                         Location
                     </h5>
-                    <h2 class="output">
+                    <h2 id="locationAddress" class="output">
                         Brooklyn, NY<br />
                         10001
                     </h2>
                 </div>
                 <div class="outputContainer">
-                    <h5 id="timezoneAddress" class="trackerOutputTitle">
+                    <h5 class="trackerOutputTitle">
                         Timezone
                     </h5>
-                    <h2 class="output"><span>UTC</span>-05:00</h2>
+                    <h2 id="timezoneAddress" class="output">
+                        <span>UTC</span>-05:00
+                    </h2>
                 </div>
                 <div class="outputContainer">
-                    <h5 id="isp" class="trackerOutputTitle">ISP</h5>
-                    <h2 class="output">
+                    <h5 class="trackerOutputTitle">ISP</h5>
+                    <h2 id="isp" class="output">
                         SpaceX<br />
                         Starlink
                     </h2>
                 </div>
             </div>
         </section>
-        <div class="mapOutput" id="mapid"></div>
+        <div
+            class="mapOutput leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+            id="mapid"
+        ></div>
 
         <!-- add offset value dynamically using the API -->
 
@@ -105,22 +111,7 @@
             >. Coded by <a href="#">David Parsons</a>.
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript">
-            var ip = "8.8.8.8";
-            var api_key = "";
-            $(function() {
-                $.ajax({
-                    url: "https://geo.ipify.org/api/v1",
-                    dataType: "jsonp",
-                    data: { apiKey: api_key, ipAddress: ip },
-                    success: function(data) {
-                        $("trackerOutputContainer").append(
-                            "<pre>" + JSON.stringify(data, "", 2) + "</pre>"
-                        );
-                    }
-                });
-            });
-        </script>
-        <!-- <script src="./index.js"></script> -->
+
+        <script src="./index.js"></script>
     </body>
 </html>
