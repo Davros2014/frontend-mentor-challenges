@@ -1,6 +1,7 @@
-let mymap; // iniitalise map variable
+let mymap; // initialise map variable
 let initialLocation = "195.192.168.206";
-
+let errorMessage =
+    "<p class='errorContainer'> The details you have entered are not valid, please try again </p>";
 locateByIP(initialLocation);
 
 document.querySelector(".searchButton").addEventListener("click", event => {
@@ -9,26 +10,29 @@ document.querySelector(".searchButton").addEventListener("click", event => {
     console.log("userInput", userInput);
     locateByIP(userInput);
     document.querySelector("input[name='ip']").value = "";
+    let errMess = document.querySelector(".errorContainer");
+
+    if (errMess) {
+        errMess.remove();
+    }
     // if (!validateIPaddress(userInput)) {
     //     document.querySelector("input[name='ip']").value = "";
     //     return;
     // }
-    if (userInput === "") {
-        const error = document.querySelector("errorContainer");
-        return error.innerHtml(
-            "Please provide valid IP address or domain name"
-        );
-    }
+    // if (userInput === "") {
+    //     const error = document.querySelector("errorContainer");
+    //     return error.innerHtml(
+    //         "Please provide valid IP address or domain name"
+    //     );
+    // }
 });
 
 async function locateByIP(input) {
     let domianInput;
-    let ipInput;
-    if ((input.match(/./g) || []).length !== 3) {
-        domianInput = input;
-    } else {
-        ipInput = input;
-    }
+    let ipInput = validateIPaddress(input);
+    (input.match(/./g) || []).length !== 3
+        ? (domianInput = input)
+        : (ipInput = input);
 
     // api call
     let api_key = "at_IfnfIuSXWZzJJmnKxnQsGKHGdcAA0";
@@ -41,7 +45,7 @@ async function locateByIP(input) {
         document.getElementById("ipAddress").innerHTML = data.ip;
         document.getElementById(
             "locationAddress"
-        ).innerHTML = `${city}, ${country},<br /> ${postalCode}`;
+        ).innerHTML = `${city}, ${country}<br /> ${postalCode}`;
         document.getElementById(
             "timezoneAddress"
         ).innerHTML = `<span>UTC</span> ${timezone}`;
@@ -49,10 +53,6 @@ async function locateByIP(input) {
 
         addToMap(lat, lng);
     } catch (err) {
-        let errorMessage =
-            "<p class='errorContainer'> The details you have entered are not valid, please try again </p>";
-        console.log("errorMessage", errorMessage);
-
         document
             .querySelector(".trackerForm")
             .insertAdjacentHTML("afterend", errorMessage);

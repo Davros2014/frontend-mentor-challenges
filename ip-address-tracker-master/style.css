@@ -68,7 +68,7 @@ p {
     background-position: top left;
     display: flex;
     align-content: center;
-    padding: 3rem 3rem 5rem 3rem;
+    padding: 2rem 3rem 5rem 3rem;
     text-align: center;
     height: 35vh;
     /* max-height: 250px; */
@@ -77,6 +77,11 @@ p {
 .mainHeader {
     font-size: clamp(2.4rem, 2vw, 3.2rem);
     color: white;
+}
+.errorContainer {
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    color: tomato;
+    padding: 0.5rem;
 }
 .trackerForm {
     display: flex;
@@ -134,7 +139,7 @@ p {
     background: white;
     margin: 0 auto;
     position: absolute;
-    top: -5rem;
+    /* top: -5rem; */
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
@@ -203,7 +208,7 @@ p {
 
 @media only screen and (min-width: 62.5rem) {
     .trackerHeader {
-        padding-top: 6rem;
+        padding-top: 3rem;
     }
     .trackerOutput {
         grid-template-columns: repeat(4, minmax(200px, 1fr));
