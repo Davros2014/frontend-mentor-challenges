@@ -29,11 +29,12 @@ document.querySelector(".searchButton").addEventListener("click", event => {
 
 async function locateByIP(input) {
     let domianInput;
-    let ipInput = validateIPaddress(input);
-    (input.match(/./g) || []).length !== 3
-        ? (domianInput = input)
-        : (ipInput = input);
-
+    let ipInput;
+    if ((input.match(/./g) || []).length !== 3) {
+        domianInput = input;
+    } else {
+        ipInput;
+    }
     // api call
     let api_key = "at_IfnfIuSXWZzJJmnKxnQsGKHGdcAA0";
     try {

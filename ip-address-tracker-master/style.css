@@ -121,7 +121,7 @@ p {
 }
 .searchButton:hover {
     transition: all 0.125s ease-in-out;
-    background: var(--headerBlue);
+    background: #434778;
 }
 .trackerOutputContainer {
     position: relative;
@@ -179,7 +179,7 @@ p {
 /* ///////////// MAP SECTION /////////////*/
 
 #mapid {
-    height: 65vh;
+    height: 59vh;
     z-index: 1;
 }
 #mapid.is-dragging {
