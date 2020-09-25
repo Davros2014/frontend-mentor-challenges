@@ -92,7 +92,7 @@ button {
     margin: 1.6rem auto 2rem auto;
 }
 .bodyText {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.35rem, 2.5vw, 1.5rem);
     color: var(--accentGreyishViolet);
     font-weight: 500;
     line-height: 1.2;
@@ -197,7 +197,6 @@ button {
 .advancedStatsContainer {
     position: relative;
     background: var(--bgGrey);
-    height: 100vh;
     display: flex;
 }
 .shortenItInput {
@@ -225,6 +224,9 @@ button {
     justify-content: center;
     height: 100vh;
 }
+.advancedStatsWrapper .smallerHeader {
+    margin-top: 15rem;
+}
 .advancedStatsWrapper .subHeader {
     width: 30vw;
     text-align: center;
@@ -248,23 +250,41 @@ button {
     margin-top: 2rem;
 }
 .infoPanels {
-    display: relative;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 3rem;
+    z-index: 1;
+    margin-top: 4rem;
 }
+.advancedStatsLine {
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 95%;
+    z-index: -1;
+    background: var(--primaryColorCyan);
+    outline: none;
+    border: none;
+}
+
 .statsPanel {
     background: var(--bgWhite);
-    padding: 4rem;
+    padding: 2rem;
     position: relative;
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.015);
+    margin-top: 4rem;
+    top: 0;
+    padding-top: 4rem;
 }
 .iconContainer {
     position: absolute;
     top: 0;
-    left: 4rem;
-    transform: translateY(-50%);
-    background: var(--accentVeryDarkViolet);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--accentVeryDarkBlue);
     border-radius: 100%;
     padding: 3.5rem;
     width: 3rem;
@@ -282,19 +302,16 @@ button {
     margin-top: 2rem;
     font-weight: 700;
     color: var(--accentVeryDarkViolet);
-    font-size: clamp(1.6rem, 1.5vw, 1.6rem);
+    font-size: clamp(1.8rem, 1.75vw, 2rem);
 }
 .statsPanel .bodyText {
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.5;
     margin-top: 0.5rem;
 }
-
-.statsPanel:nth-child(2) {
-    top: 4rem;
-}
-.statsPanel:nth-child(3) {
-    top: 8rem;
+.statsHeader,
+.statsPanel .statsBody {
+    text-align: center;
 }
 
 /* ///////////// BOOST LINKS SECTION /////////////*/
@@ -360,8 +377,38 @@ button {
         margin-left: 2rem;
     }
     /* advanced stats */
+    .advancedStatsContainer {
+        height: 100vh;
+    }
     .infoPanels {
         grid-template-columns: repeat(3, minmax(200px, 1fr));
+        margin-top: 0;
+    }
+    .statsPanel {
+        padding: 4rem;
+    }
+    .statsHeader,
+    .statsPanel .statsBody {
+        text-align: left;
+    }
+    .statsPanel:nth-child(2) {
+        top: 4rem;
+    }
+    .statsPanel:nth-child(3) {
+        top: 8rem;
+    }
+    .iconContainer {
+        left: 4rem;
+        top: 0;
+        transform: translate(0, -50%);
+    }
+    .advancedStatsLine {
+        position: absolute;
+        top: 60%;
+        left: 0;
+        transform: translateX(0);
+        width: 100%;
+        height: 10px;
     }
 }
 
