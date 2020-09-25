@@ -30,94 +30,116 @@
         <link href="./style.css" rel="stylesheet" />
     </head>
     <body>
-        <header class="shortlyHeader">
-            <nav class="mainNav">
+        <div class="appContainer">
+            <header class="shortlyHeader appWidth">
+                <nav class="mainNav">
+                    <div class="desktopNav">
+                        <img
+                            src="./images/logo.svg"
+                            alt="mainLogo"
+                            class="shortlyLogo"
+                        />
+                        <ul class="navList">
+                            <li id="features" class="navListItem">Features</li>
+                            <li id="pricing" class="navListItem">Pricing</li>
+                            <li id="resources" class="navListItem">
+                                Resources
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="logInDetails">
+                        <li id="login" class="logInItem">Login</li>
+                        <button id="signUp" class="mainButton navButton">
+                            Sign Up
+                        </button>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="shortlyHero appWidth">
                 <img
-                    src="./images/logo.svg"
+                    src="./images/illustration-working.svg"
                     alt="mainLogo"
-                    class="shortlyLogo"
+                    class="heroImg"
                 />
-                <ul class="navList">
-                    <li id="features" class="navListItem">Features</li>
-                    <li id="pricing" class="navListItem">Pricing</li>
-                    <li id="resources" class="navListItem">Resources</li>
-                </ul>
-                <ul class="logInDetails">
-                    <li id="login" class="logInItem">Login</li>
-                    <li id="pricing" class="logInItem">Pricing</li>
-                </ul>
-            </nav>
-        </header>
-        <section class="shortlyHero">
-            <h1 class="mainHeader">More than just shorter links</h1>
-            <h4 class="subHeader">
-                Build your brand’s recognition and get detailed insights on how
-                your links are performing.
-            </h4>
-            <button class="mainButton">Get Started</button>
-        </section>
-        <section class="shortenItInput">
-            <input
-                type="text"
-                class="inputField"
-                placeholder="Shorten a link here..."
-            />
-            <button class="shortenItButton mainButton">Shorten It!</button>
-        </section>
-        <section class="advancedStats">
-            <h2 class="smallerHeader">Advanced Statistics</h2>
-            <p class="bodyText">
-                Track how your links are performing across the web with our
-                advanced statistics dashboard.
-            </p>
-            <div class="infoPanels">
-                <div id="brandRec" class="statsPanel">
-                    <img
-                        src="./images/icon-brand-recognition.svg"
-                        alt="brand-recognition"
-                        class="statsImg"
-                    />
-                    <h5 class="statsHeader">Brand Recognition</h5>
-                    <p class="bodyText statsBody">
-                        Boost your brand recognition with each click. Generic
-                        links don’t mean a thing. Branded links help instil
-                        confidence in your content.
-                    </p>
-                </div>
-                <div id="detailedRec" class="statsPanel">
-                    <img
-                        src="./images/icon-detailed-records.svg"
-                        alt="detailed-records"
-                        class="statsImg"
-                    />
-                    <h5 class="statsHeader">Detailed Records</h5>
-                    <p class="bodyText statsBody">
-                        Gain insights into who is clicking your links. Knowing
-                        when and where people engage with your content helps
-                        inform better decisions.
-                    </p>
-                </div>
-                <div id="fullyCustomisable" class="statsPanel">
-                    <img
-                        src="./images/icon-fully-customizable.svg"
-                        alt="fully-customizable"
-                        class="statsImg"
-                    />
-                    <h5 class="statsHeader">Fully Customizable</h5>
-                    <p class="bodyText statsBody">
-                        Improve brand awareness and content discoverability
-                        through customizable links, supercharging audience
-                        engagement.
-                    </p>
+                <div class="heroInfo">
+                    <h1 class="mainHeader">More than just shorter links</h1>
+                    <h4 class="subHeader">
+                        Build your brand’s recognition and get detailed insights
+                        on how your links are performing.
+                    </h4>
+                    <button class="mainButton">Get Started</button>
                 </div>
             </div>
-        </section>
-        <section class="boostLinks">
-            <h2 class="smallerHeader">Boost your links today</h2>
-            <button class="mainButton">Get Started</button>
-        </section>
-        <footer class="shortlyFooter">
-            <nav class="footerNav">
+
+            <section class="advancedStats ">
+                <div class="shortenItInput appWidth">
+                    <input
+                        type="text"
+                        class="inputField"
+                        placeholder="Shorten a link here..."
+                    />
+                    <button class="shortenItButton mainButton">
+                        Shorten It!
+                    </button>
+                </div>
+
+                <div class="shortenItContainer appWidth">
+                    <h2 class="smallerHeader">Advanced Statistics</h2>
+                    <p class="bodyText">
+                        Track how your links are performing across the web with
+                        our advanced statistics dashboard.
+                    </p>
+                    <div class="infoPanels">
+                        <div id="brandRec" class="statsPanel">
+                            <img
+                                src="./images/icon-brand-recognition.svg"
+                                alt="brand-recognition"
+                                class="statsImg"
+                            />
+                            <h5 class="statsHeader">Brand Recognition</h5>
+                            <p class="bodyText statsBody">
+                                Boost your brand recognition with each click.
+                                Generic links don’t mean a thing. Branded links
+                                help instil confidence in your content.
+                            </p>
+                        </div>
+                        <div id="detailedRec" class="statsPanel">
+                            <img
+                                src="./images/icon-detailed-records.svg"
+                                alt="detailed-records"
+                                class="statsImg"
+                            />
+                            <h5 class="statsHeader">Detailed Records</h5>
+                            <p class="bodyText statsBody">
+                                Gain insights into who is clicking your links.
+                                Knowing when and where people engage with your
+                                content helps inform better decisions.
+                            </p>
+                        </div>
+                        <div id="fullyCustomisable" class="statsPanel">
+                            <img
+                                src="./images/icon-fully-customizable.svg"
+                                alt="fully-customizable"
+                                class="statsImg"
+                            />
+                            <h5 class="statsHeader">Fully Customizable</h5>
+                            <p class="bodyText statsBody">
+                                Improve brand awareness and content
+                                discoverability through customizable links,
+                                supercharging audience engagement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="boostLinks">
+                <h2 class="smallerHeader">Boost your links today</h2>
+                <button class="mainButton">Get Started</button>
+            </section>
+        </div>
+        <footer class="shortlyFooter ">
+            <nav class="footerNav appWidth">
                 <img
                     src="./images/logo.svg"
                     alt="footerLogo"
