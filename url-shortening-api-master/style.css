@@ -108,7 +108,7 @@ button {
 
 .appContainer {
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 5rem 0 0 0;
 }
 .appWidth {
     width: 90vw;
@@ -148,11 +148,11 @@ button {
     text-align: center;
 }
 .mainButton {
-    font-size: clamp(1.6rem, 1.5vw, 1.6rem);
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
     font-weight: 500;
     color: var(--textWhite);
     background: var(--primaryColorCyan);
-    padding: 2rem 2rem;
+    padding: 1.75rem 2rem;
     border-radius: 50px;
     width: 50vw;
     margin: 0 auto;
@@ -198,6 +198,7 @@ button {
     position: relative;
     background: var(--bgGrey);
     display: flex;
+    padding-bottom: 20rem;
 }
 .shortenItInput {
     width: 90vw;
@@ -223,6 +224,7 @@ button {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding-top: 15rem;
 }
 .advancedStatsWrapper .smallerHeader {
     margin-top: 15rem;
@@ -313,22 +315,85 @@ button {
 .statsPanel .statsBody {
     text-align: center;
 }
+.advancedStatsWrapper .subHeader {
+    width: 100%;
+}
 
 /* ///////////// BOOST LINKS SECTION /////////////*/
 
+.boostLinks {
+    background: var(--primaryDarkViolet);
+    background-image: url(./images/bg-boost-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    text-align: center;
+    padding: 5rem;
+}
+
+.boostLinks .smallerHeader {
+    color: white;
+}
+.boostLinks .mainButton {
+    margin-top: 2rem;
+}
+
 /* ///////////// FOOTER SECTION /////////////*/
+
+.shortlyFooter {
+    background: var(--veryDarkGrey);
+    padding: 6rem 0;
+}
+.footerLogo {
+    fill: white;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+.footerNav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.footerList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.footerListItem {
+    font-size: clamp(1.4rem, 1.75vw, 1.4rem);
+    color: var(--accentGrey);
+    line-height: 1.8;
+}
+.footerListItem strong {
+    font-size: clamp(1.5rem, 1.75vw, 1.5rem);
+    line-height: 1.8;
+    font-weight: 700;
+    color: var(--textWhite);
+}
+.socialNav {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+/* ///////////// ATTRIBUTATIONS SECTION /////////////*/
 
 .attribution {
     padding: 2.5rem 0 3.5rem 0;
     text-align: center;
     font-size: 1rem;
-    border-top: 1px solid var(--cyan);
+    border-top: 1px solid var(--primaryColorCyanHover);
     background: var(--veryDarkGrey);
     height: 5rem;
     color: white;
 }
 .attribution a {
-    color: var(--cyan);
+    color: var(--primaryColorCyanHover);
     font-size: 1rem;
 }
 
@@ -380,6 +445,12 @@ button {
     .advancedStatsContainer {
         height: 100vh;
     }
+    .advancedStatsWrapper {
+        padding-top: 0;
+    }
+    .advancedStatsWrapper .subHeader {
+        width: 30vw;
+    }
     .infoPanels {
         grid-template-columns: repeat(3, minmax(200px, 1fr));
         margin-top: 0;
@@ -409,6 +480,22 @@ button {
         transform: translateX(0);
         width: 100%;
         height: 10px;
+    }
+    /* footer */
+    .footerNav {
+        grid-template-columns: repeat(5, minmax(max-content, 1fr));
+        margin-top: 0;
+    }
+    .footerLogo {
+        margin-right: 10vw;
+    }
+    .socialIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-left: 3rem;
+    }
+    .socialNav {
+        margin-top: 0;
     }
 }
 
