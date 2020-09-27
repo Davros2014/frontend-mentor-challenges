@@ -5,6 +5,7 @@
 html {
     --bgWhite: #ffffff;
     --textWhite: #f9f9f9;
+    --textWhite50: #d1d0d0;
     --bgGrey: #eff1f7;
 
     --veryDarkGrey: hsl(0, 0%, 17%);
@@ -13,6 +14,7 @@ html {
     /* PRIMARY COLORS */
     --primaryColorCyan: hsl(180, 66%, 49%);
     --primaryColorCyanHover: hsl(180, 66%, 69%);
+    --primaryColorCyanDark: hsl(180, 66%, 29%);
     --primaryDarkViolet: hsl(257, 27%, 26%);
 
     /* SECONDARY COLORS */
@@ -26,7 +28,7 @@ html {
     --accentVeryDarkViolet: hsl(260, 8%, 14%);
 
     /* basic transition */
-    --transitionColor: all 0.15s ease-in-out;
+    --transitionAll: all 0.1s ease-in-out;
 }
 * {
     box-sizing: border-box;
@@ -35,6 +37,8 @@ html {
     list-style-type: none;
     text-decoration: none;
     font-size: 62.5%;
+    list-style: none;
+    text-decoration: none;
 }
 body {
     margin: 0;
@@ -117,36 +121,24 @@ button {
 .shortlyHeader {
     font-size: clamp(1.6rem, 1.5vw, 2.4rem);
 }
-.mainNav {
-    display: flex;
-    justify-content: space-between;
-}
-.desktopNav {
-    display: flex;
-}
+
+/* NAVBAR - DESKTOP */
 .shortlyLogo {
     max-width: 100%;
     height: 100%;
     object-fit: contain;
 }
-.navList {
+.mainNav {
+    position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    z-index: 10;
 }
-.navListItem,
-.logInItem {
-    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
-    margin-left: 5rem;
-    font-weight: 700;
-    color: var(--accentGreyishViolet);
-    cursor: pointer;
-}
-.logInDetails {
-    display: flex;
-    margin-left: 5rem;
-    align-items: center;
-    text-align: center;
-}
+
+/* END NAV */
+
 .mainButton {
     font-size: clamp(1.4rem, 1.5vw, 1.6rem);
     font-weight: 500;
@@ -154,12 +146,13 @@ button {
     background: var(--primaryColorCyan);
     padding: 1.75rem 2rem;
     border-radius: 50px;
-    width: 50vw;
+    width: 50%;
     margin: 0 auto;
-    transition: var(--transitionColor);
+    transition: var(--transitionAll);
+    cursor: pointer;
 }
 .mainButton:hover {
-    transition: var(--transitionColor);
+    transition: var(--transitionAll);
     background: var(--primaryColorCyanHover);
     cursor: pointer;
 }
@@ -237,10 +230,10 @@ button {
 .inputField {
     background: var(--textWhite);
     font-size: clamp(1.6rem, 1.5vw, 1.6rem);
-    padding: 2rem;
+    padding: 1.75rem 2rem;
     width: 100%;
     margin: 0 auto;
-    transition: var(--transitionColor);
+    transition: var(--transitionAll);
     outline: none;
     border: none;
     border-radius: 8px;
@@ -250,6 +243,7 @@ button {
     border-radius: 8px;
     font-weight: 700;
     margin-top: 2rem;
+    font-size: clamp(1.4rem, 1.15vw, 1.6rem);
 }
 .infoPanels {
     position: relative;
@@ -267,11 +261,10 @@ button {
     width: 10px;
     height: 95%;
     z-index: -1;
-    background: var(--primaryColorCyan);
+    background: var(--primaryColorCyanDark);
     outline: none;
     border: none;
 }
-
 .statsPanel {
     background: var(--bgWhite);
     padding: 2rem;
@@ -330,7 +323,6 @@ button {
     text-align: center;
     padding: 5rem;
 }
-
 .boostLinks .smallerHeader {
     color: white;
 }
@@ -380,6 +372,18 @@ button {
     margin: 0 auto;
     margin-top: 2rem;
 }
+.socialIcon {
+    opacity: 0.5;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 3rem;
+    transition: var(--transitionAll);
+    cursor: pointer;
+}
+.socialIcon:hover {
+    opacity: 1;
+    transition: var(--transitionAll);
+}
 
 /* ///////////// ATTRIBUTATIONS SECTION /////////////*/
 
@@ -397,11 +401,145 @@ button {
     font-size: 1rem;
 }
 
+/* ///// MOBILE NAV ///// */
+
+/* ///// HAMBURGER MENU ///// */
+.mobileBtn {
+    width: 25px;
+    height: 20px;
+    transition: var(--transitionAll);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.mobileBtn:hover {
+    cursor: pointer;
+}
+.mobileBtn span {
+    width: 25px;
+    height: 3px;
+    background: var(--veryDarkGrey);
+}
+#mobileNav.active ~ .toggleBtn span {
+    background: #000;
+}
+#mobileNav ~ .mobileBtn span:nth-child(1) {
+    transition: var(--transitionAll);
+    transform: translate(0, 0) rotate(0deg);
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(1) {
+    transform: translate(0, 9px) rotate(45deg);
+    background: var(--primaryColorCyan);
+}
+#mobileNav ~ .mobileBtn span:nth-child(2) {
+    transition: var(--transitionAll);
+    opacity: 1;
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(2) {
+    opacity: 0;
+}
+#mobileNav ~ .mobileBtn span:nth-child(3) {
+    transition: var(--transitionAll);
+    transform: translate(0, 0) rotate(0deg);
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(3) {
+    transform: translate(0, -8px) rotate(-45deg);
+    background: var(--primaryColorCyan);
+}
+/* ///////////////////////////////////////////// */
+
+#mobileNav {
+    background: var(--primaryDarkViolet);
+    position: fixed;
+
+    border-radius: 10px;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 50vh;
+    transition: all 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+}
+#mobileNav.active {
+    transition: all 0.25s ease-in-out;
+    top: 10vh;
+    opacity: 1;
+}
+#mobileNav .navList {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logInDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* #mobileNav li:hover {
+    background: rgba(0, 0, 0, 0.75);
+    color: yellow;
+    letter-spacing: 1rem;
+} */
+
+/* .navList {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.navListItem,
+.logInItem {
+    line-height: 5rem;
+    font-size: 2.25rem;
+    color: var(--textWhite50);
+    margin: 0;
+    padding: 0;
+    transition: var(--transitionAll);
+}
+.navListItem:hover,
+.logInItem:hover {
+    cursor: pointer;
+    transition: var(--transitionAll);
+    color: var(--textWhite);
+}
+.logInItem {
+    margin-left: 0;
+    border-top: 1px solid var(--darkGrey);
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+.navButton {
+    width: 80%;
+    margin: 0;
+    margin-top: 2rem;
+}
+#signUp {
+    width: 24rem;
+    z-index: 5;
+}
+
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
 
 @media only screen and (min-width: 62.5rem) {
+    .mobileBtn {
+        display: none;
+    }
     .appWidth {
         width: 70vw;
         margin: 0 auto;
@@ -414,7 +552,8 @@ button {
         text-align: left;
     }
     .mainButton {
-        width: 10vw;
+        width: clamp(24rem, 90%, 15rem);
+        z-index: 5;
     }
     /* hero section  */
     .shortlyHero {
@@ -473,6 +612,9 @@ button {
         top: 0;
         transform: translate(0, -50%);
     }
+    .advancedStatsWrapper .smallerHeader {
+        margin-top: 0;
+    }
     .advancedStatsLine {
         position: absolute;
         top: 60%;
@@ -486,18 +628,62 @@ button {
         grid-template-columns: repeat(5, minmax(max-content, 1fr));
         margin-top: 0;
     }
+    .footerList {
+        text-align: left;
+    }
+    .footerList:first-child {
+        margin-bottom: 5rem;
+    }
+    .footerListItem strong {
+        margin-bottom: 5rem;
+    }
     .footerLogo {
         margin-right: 10vw;
-    }
-    .socialIcon {
-        width: 2.5rem;
-        height: 2.5rem;
-        margin-left: 3rem;
     }
     .socialNav {
         margin-top: 0;
     }
-}
+    /* DESKTOP MENU  */
 
+    .desktopNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .logInDetails {
+        flex-direction: row;
+    }
+    .navList {
+        display: flex;
+        align-items: center;
+    }
+    .navListItem,
+    .logInItem {
+        font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+        margin-left: 5rem;
+        font-weight: 700;
+        color: var(--accentGreyishViolet);
+        cursor: pointer;
+    }
+    .logInItem {
+        margin-left: 5rem;
+        border-top: none;
+        line-height: 1.6;
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .navButton {
+        margin-top: 0;
+    }
+    .signUp {
+        margin: 0;
+        width: 80%;
+    }
+    .bob {
+        background: red;
+    }
+}
 @media only screen and (min-width: 75rem) {
 }
