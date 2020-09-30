@@ -299,10 +299,9 @@ button {
 }
 .copyBtnContainer {
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    align-content: flex-start;
+    align-items: flex-start;
     text-align: left;
     width: 100%;
 }
@@ -311,6 +310,7 @@ button {
     font-size: clamp(1.2rem, 1.25vw, 1.4rem);
     margin-right: 2rem;
     padding: 2rem 0;
+    text-align: left;
 }
 .copyBtn {
     border-radius: 5px;
