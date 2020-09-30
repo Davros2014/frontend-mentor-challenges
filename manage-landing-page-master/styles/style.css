@@ -99,6 +99,10 @@ button {
 
 .appContainer {
   padding-top: 8rem;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  background-image: url("./images/bg-simplify-section-desktop.svg");
 }
 
 .appWidth {
@@ -107,17 +111,17 @@ button {
 }
 
 .mainBtn {
-  /* font-size: clamp(1.5rem, 1.5vw, 1.6rem); */
-  font-size: clamp(2rem, 1.5vw, 1.6rem);
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
   font-weight: 500;
   color: var(--neutralVeryPaleRed);
   background: var(--primaryBrightRed);
-  padding: 1.75rem 1.75rem;
+  padding: 1.5rem 1.75rem;
   border-radius: 50px;
   width: 50%;
   margin: 0 auto;
   transition: var(--transitionAll);
   cursor: pointer;
+  box-shadow: 0px 0px 8px 8px var(--neutralVeryPaleRed);
 }
 
 .mainBtn:hover {
@@ -200,6 +204,7 @@ button {
   align-items: center;
   width: 100%;
   z-index: 10;
+  flex: 1;
 }
 
 .desktopNav {
@@ -208,13 +213,20 @@ button {
   justify-content: space-between;
   z-index: -3;
   flex: 2;
-  /* width: 100%; */
 }
 
 .navList {
   display: flex;
   align-items: center;
-  flex: 5;
+  justify-content: space-around;
+  flex: 2;
+  padding: 0 10vw;
+}
+
+.navListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .navListItem a {
@@ -233,10 +245,8 @@ button {
 }
 
 .navButton {
-  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
-  color: var(--neutralVeryPaleRed);
+  max-width: 15rem;
   flex: 1;
-  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.125);
 }
 
 /* ///// MOBILE NAV ///// */
@@ -344,8 +354,8 @@ button {
 
   .navList {
     display: flex;
-    align-items: center;
-    margin-left: 15%;
+    align-items: flex-end;
+    text-align: right;
   }
 
   .navListItem a {
@@ -370,7 +380,7 @@ button {
 .manageHero {
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   padding-bottom: 10rem;
@@ -406,11 +416,31 @@ button {
 
   .heroInfo {
     width: 40%;
+    text-align: left;
   }
 }
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
+.aboutManage {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.whatsDifferent {
+  background: red;
+}
+
+.companyHighlights {
+  background: blue;
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .aboutManage {
+    grid-template-columns: repeat(2, minmax(50%, 1fr));
+    grid-column-gap: 5rem;
+  }
+}
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/

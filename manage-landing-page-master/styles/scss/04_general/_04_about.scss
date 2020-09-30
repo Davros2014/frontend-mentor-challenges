@@ -6,5 +6,20 @@
    MEDIA QUERIES
 //////////////////////////////////////*/
 
+.aboutManage {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.whatsDifferent {
+    background: red;
+}
+.companyHighlights {
+    background: blue;
+}
+
 @media only screen and (min-width: 62.5rem) {
+    .aboutManage {
+        grid-template-columns: repeat(2, minmax(50%, 1fr));
+        grid-column-gap: 5rem;
+    }
 }
