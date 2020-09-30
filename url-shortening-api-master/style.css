@@ -195,6 +195,7 @@ button {
     display: flex;
     flex-direction: column;
     height: auto;
+    padding-bottom: 10rem;
 }
 
 .shortenItInput {
