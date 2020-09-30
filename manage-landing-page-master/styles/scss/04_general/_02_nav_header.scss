@@ -1,0 +1,97 @@
+///////////////////////////////////////
+//          NAVBAR - MOBILE          //
+///////////////////////////////////////
+
+.manageLogo {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.mainNav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+/* ///// MOBILE NAV ///// */
+
+/* ///// HAMBURGER MENU ///// */
+.mobileBtn {
+    width: 25px;
+    height: 20px;
+    transition: var(--transitionAll);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.mobileBtn:hover {
+    cursor: pointer;
+}
+.mobileBtn span {
+    width: 25px;
+    height: 3px;
+    background: var(--veryDarkGrey);
+}
+#mobileNav.active ~ .toggleBtn span {
+    background: #000;
+}
+#mobileNav ~ .mobileBtn span:nth-child(1) {
+    transition: var(--transitionAll);
+    transform: translate(0, 0) rotate(0deg);
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(1) {
+    transform: translate(0, 9px) rotate(45deg);
+    background: var(--primaryColorCyan);
+}
+#mobileNav ~ .mobileBtn span:nth-child(2) {
+    transition: var(--transitionAll);
+    opacity: 1;
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(2) {
+    opacity: 0;
+}
+#mobileNav ~ .mobileBtn span:nth-child(3) {
+    transition: var(--transitionAll);
+    transform: translate(0, 0) rotate(0deg);
+}
+#mobileNav.active ~ .mobileBtn span:nth-child(3) {
+    transform: translate(0, -8px) rotate(-45deg);
+    background: var(--primaryColorCyan);
+}
+/* ///////////////////////////////////////////// */
+
+#mobileNav {
+    background: var(--primaryDarkViolet);
+    position: fixed;
+
+    border-radius: 10px;
+    top: -10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: all 0.1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    z-index: -20;
+    padding: 3rem 2rem;
+}
+#mobileNav.active {
+    transition: all 0.25s ease-in-out;
+    top: 13vh;
+    opacity: 1;
+    z-index: 20;
+}
+#mobileNav .navList {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

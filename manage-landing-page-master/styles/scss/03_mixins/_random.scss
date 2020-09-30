@@ -1,0 +1,17 @@
+/* ========================= MIXINS =============================== */
+
+/* @include push--auto */
+@mixin push--auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+// When using ::before and ::after you'll always need these three - @include pseudo;
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  content: $content;
+  display: $display;
+  position: $pos;
+}

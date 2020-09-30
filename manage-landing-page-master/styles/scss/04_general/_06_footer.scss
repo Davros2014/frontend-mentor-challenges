@@ -1,0 +1,24 @@
+////////////////////////////////////////////////
+//              FOOTER SECTION               //
+////////////////////////////////////////////////
+
+.attribution {
+    padding: 2.5rem 0 3.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid var(--cyan);
+    background: var(--veryDarkGrey);
+    height: 5rem;
+    color: white;
+}
+.attribution a {
+    color: var(--cyan);
+    font-size: 1rem;
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+@media only screen and (min-width: 62.5rem) {
+}

@@ -1,0 +1,130 @@
+// IMPORTED FONTS ///////////////////////////
+
+// @import url("/WEBSITE_ALT_FEB_2019/fonts/montserrat/montserrat_stylesheet.css");
+// @import url("/WEBSITE_ALT_FEB_2019/fonts/playfair_display/playfair_stylesheet.css");
+
+// COLOURS;
+// GREY: #a5a5a3
+// GREEN: #2bd3c6 #22D3C5
+// DARK GREY: #2d2c2f
+// ORANGE: #dfa328
+// /////////////////////////
+
+// // GENERAL COLOURS ///////////////////////////
+
+// $primary-color: #f0b500;
+// $primary-color: rgba(34, 211, 197, 1); // main greeny color
+// $primary-color: rgba(145, 75, 330, 1);
+// $primary-color: #d81759;
+// $primary-color: rgba(58, 175, 189, 1);
+
+$secondary-color: rgba(26, 25, 21, 1);
+$complimentary-color: rgba(97, 97, 97, 1);
+$complimentary-color: rgba(107, 107, 107, 1);
+
+$accent-color: rgba(51, 51, 51, 1);
+// new greyish $accent-color: #F45D4C;
+
+$backgroundColour: #f2f2f2;
+
+$light-accent-color: rgba(230, 228, 223, 1); // header light grey
+$background-color: rgba(252, 252, 252, 1); // background off-white
+$canvas-color: rgba(240, 240, 240, 1);
+$header-color: rgb(247, 247, 247); // header color
+
+// FOOTER COLOURS ///////////////////////////
+$focusBGColor: #484848;
+$overlayColor: rgba(270, 270, 270, 0.05);
+
+// FONT COLOURS ///////////////////////////
+
+$primary-font-color: #969595; // main header grey
+$bodyTextColor: rgba(51, 51, 51, 0.7);
+
+// FONTS ///////////////////////////
+
+$bodytext: "montserratlight";
+$serifHeader: "playfair_displaybold";
+$serifBody: "playfair_displayregular";
+$overlayText: "montserratsemi_bold";
+$spanText: "playfair_displayitalic";
+$mainheaderfont: "montserratregular";
+
+// FONTS MIXINS ///////////////////////////
+
+// MAIN HEADERS ///////////////////////////
+
+// INTRO PAGE HEADER
+@mixin H1-Headers-playfair-display(
+    $size: 3.6rem,
+    $colour: $primary-color,
+    $weight: 300,
+    $lh: 1.15,
+    $ls: 0.025rem
+) {
+    font-family: "Playfair Display", serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+// Main Body Text
+@mixin BodyText-inter(
+    $size: 1.6rem,
+    $colour: $complimentary-color,
+    $weight: 400,
+    $lh: 1.6,
+    $ls: 0.01rem
+) {
+    font-family: "Inter", sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}
+@mixin LightText-inter(
+    $size: 1.6rem,
+    $colour: $complimentary-color,
+    $weight: 100,
+    $lh: 1.5,
+    $ls: 0.1rem
+) {
+    font-family: "Inter", sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $colour {
+        color: $colour;
+    }
+    @if $weight {
+        font-weight: $weight;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+}

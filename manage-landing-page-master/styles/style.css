@@ -1,0 +1,312 @@
+body {
+  -webkit-animation: fadein 1.5s;
+  /* Safari, Chrome and Opera > 12.1 */
+  /* Firefox < 16 */
+  /* Internet Explorer */
+  /* Opera < 12.1 */
+  animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dispNone {
+  display: none;
+}
+
+* html {
+  box-sizing: border-box;
+  /*  font-size: rem....; define % for responsive design (default 100% = 16px - 62.5% = 10px)*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* /////////////////////////////////////
+   GLOBAL VARIABLES
+//////////////////////////////////////*/
+html {
+  --veryDarkGrey: hsl(0, 0%, 17%);
+  --darkGrey: hsl(0, 0%, 59%);
+  /* PRIMARY COLORS */
+  --primaryBrightRed: hsl(12, 88%, 59%);
+  --primaryBrightRedHover: hsl(12, 88%, 69%);
+  --primaryDarkBlue: hsl(228, 39%, 23%);
+  /* NEUTRAL COLORS */
+  --neutralDarkGrayishBlue: hsl(227, 12%, 61%);
+  --neutralVeryDarkBlue: hsl(233, 12%, 13%);
+  --neutralVeryPaleRed: hsl(13, 100%, 96%);
+  --neutralVeryLightGray: hsl(0, 0%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam", sans-serif;
+  color: var(--veryDarkGrey);
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: "Be Vietnam", sans-serif;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: block;
+}
+
+.appWidth {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.manageHeader {
+  font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+}
+
+.mainBtn {
+  /* font-size: clamp(1.5rem, 1.5vw, 1.6rem); */
+  font-size: clamp(2rem, 1.5vw, 1.6rem);
+  font-weight: 500;
+  color: var(--textWhite);
+  background: red;
+  padding: 1.75rem 2rem;
+  border-radius: 50px;
+  width: 50%;
+  margin: 0 auto;
+  transition: var(--transitionAll);
+  cursor: pointer;
+}
+
+.mainBtn:hover {
+  transition: var(--transitionAll);
+  background: red;
+  cursor: pointer;
+}
+
+.manageLogo {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mainNav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 10;
+}
+
+/* ///// MOBILE NAV ///// */
+/* ///// HAMBURGER MENU ///// */
+.mobileBtn {
+  width: 25px;
+  height: 20px;
+  transition: var(--transitionAll);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.mobileBtn:hover {
+  cursor: pointer;
+}
+
+.mobileBtn span {
+  width: 25px;
+  height: 3px;
+  background: var(--veryDarkGrey);
+}
+
+#mobileNav.active ~ .toggleBtn span {
+  background: #000;
+}
+
+#mobileNav ~ .mobileBtn span:nth-child(1) {
+  transition: var(--transitionAll);
+  transform: translate(0, 0) rotate(0deg);
+}
+
+#mobileNav.active ~ .mobileBtn span:nth-child(1) {
+  transform: translate(0, 9px) rotate(45deg);
+  background: var(--primaryColorCyan);
+}
+
+#mobileNav ~ .mobileBtn span:nth-child(2) {
+  transition: var(--transitionAll);
+  opacity: 1;
+}
+
+#mobileNav.active ~ .mobileBtn span:nth-child(2) {
+  opacity: 0;
+}
+
+#mobileNav ~ .mobileBtn span:nth-child(3) {
+  transition: var(--transitionAll);
+  transform: translate(0, 0) rotate(0deg);
+}
+
+#mobileNav.active ~ .mobileBtn span:nth-child(3) {
+  transform: translate(0, -8px) rotate(-45deg);
+  background: var(--primaryColorCyan);
+}
+
+/* ///////////////////////////////////////////// */
+#mobileNav {
+  background: var(--primaryDarkViolet);
+  position: fixed;
+  border-radius: 10px;
+  top: -10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  z-index: -20;
+  padding: 3rem 2rem;
+}
+
+#mobileNav.active {
+  transition: all 0.25s ease-in-out;
+  top: 13vh;
+  opacity: 1;
+  z-index: 20;
+}
+
+#mobileNav .navList {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ///////////// HERO SECTION /////////////*/
+.heroImg {
+  object-fit: cover;
+  width: 100%;
+  object-position: right;
+  margin-bottom: 5rem;
+  margin-left: 25%;
+  z-index: -1;
+}
+
+.heroInfo {
+  width: 90vw;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  z-index: -1;
+  text-align: center;
+}
+
+/* ///////////// ADV STATS SECTION /////////////*/
+.advancedStatsContainer {
+  position: relative;
+  background: var(--bgGrey);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding-bottom: 10rem;
+}
+
+.manageInput {
+  position: absolute;
+  width: 90vw;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: var(--primaryDarkViolet);
+  background-image: url(./images/bg-shorten-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top left;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.75rem 2rem;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.manageButton {
+  width: 100%;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: clamp(1.4rem, 1.15vw, 1.6rem);
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 1.8rem;
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+.attribution {
+  padding: 2.5rem 0 3.5rem 0;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid var(--cyan);
+  background: var(--veryDarkGrey);
+  height: 5rem;
+  color: white;
+}
+
+.attribution a {
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+/*# sourceMappingURL=style.css.map */
