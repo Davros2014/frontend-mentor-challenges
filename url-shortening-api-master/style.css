@@ -139,8 +139,9 @@ button {
 
 /* END NAV */
 
-.mainButton {
-    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+.mainBtn {
+    /* font-size: clamp(1.5rem, 1.5vw, 1.6rem); */
+    font-size: clamp(2rem, 1.5vw, 1.6rem);
     font-weight: 500;
     color: var(--textWhite);
     background: var(--primaryColorCyan);
@@ -151,12 +152,13 @@ button {
     transition: var(--transitionAll);
     cursor: pointer;
 }
-.mainButton:hover {
+.mainBtn:hover {
     transition: var(--transitionAll);
     background: var(--primaryColorCyanHover);
     cursor: pointer;
 }
 .navButton {
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
     margin-left: 5rem;
     text-align: center;
 }
@@ -191,52 +193,28 @@ button {
     position: relative;
     background: var(--bgGrey);
     display: flex;
-    padding-bottom: 20rem;
+    flex-direction: column;
+    height: auto;
 }
+
 .shortenItInput {
+    position: absolute;
     width: 90vw;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     background: var(--primaryDarkViolet);
     background-image: url(./images/bg-shorten-desktop.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top left;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    flex-direction: column;
-}
-.advancedStatsWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding-top: 15rem;
-}
-.advancedStatsWrapper .smallerHeader {
-    margin-top: 15rem;
-}
-.advancedStatsWrapper .subHeader {
-    width: 30vw;
-    text-align: center;
-    margin-bottom: 5rem;
-}
-.inputField {
-    background: var(--textWhite);
-    font-size: clamp(1.6rem, 1.5vw, 1.6rem);
+    align-items: flex-start;
     padding: 1.75rem 2rem;
-    width: 100%;
-    margin: 0 auto;
-    transition: var(--transitionAll);
-    outline: none;
-    border: none;
-    border-radius: 8px;
+    flex-direction: column;
+    z-index: 1;
 }
 .shortenItButton {
     width: 100%;
@@ -244,7 +222,135 @@ button {
     font-weight: 700;
     margin-top: 2rem;
     font-size: clamp(1.4rem, 1.15vw, 1.6rem);
+    border: 2px solid rgba(0, 0, 0, 0);
+    padding: 1.8rem;
 }
+.error {
+    font-size: 1rem;
+    color: var(--secondaryColorRed);
+    margin: 1rem 0 0 1rem;
+}
+.inputErrorContainer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.inputField {
+    background: var(--textWhite);
+    font-size: clamp(1.6rem, 1.5vw, 1.6rem);
+    padding: 1.75rem 2rem;
+    flex: 1;
+    transition: var(--transitionAll);
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    z-index: 5;
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+.inputField.errorFocus {
+    transition: var(--transitionAll);
+    border: 2px solid var(--secondaryColorRed);
+    border-radius: 8px;
+}
+.inputField.error::placeholder {
+    color: var(--secondaryColorRed);
+}
+
+/* SHORTER LINKS SECTION */
+
+.shortLinksSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 10rem;
+}
+
+.shorterLinksContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--textWhite);
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.015);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.originalLink {
+    color: var(--veryDarkGrey);
+    font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+    transition: var(--transitionAll);
+    z-index: 5;
+    max-width: 100%;
+    /* margin: 0 auto; */
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--darkGrey);
+    text-align: left;
+}
+.copyBtnContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+    text-align: left;
+    width: 100%;
+}
+.itemShortlink {
+    color: var(--primaryColorCyan);
+    font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+    margin-right: 2rem;
+    padding: 2rem 0;
+}
+.copyBtn {
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 1.15vw, 1.6rem);
+    color: var(--textWhite);
+    background: var(--primaryColorCyan);
+    padding: 0.85rem 1.5rem;
+    transition: var(--transitionAll);
+    width: 100%;
+}
+.copyBtn.copied {
+    background: var(--veryDarkGrey);
+    transition: var(--transitionAll);
+}
+.copyBtn:hover {
+    transition: var(--transitionAll);
+    cursor: pointer;
+    background: var(--primaryColorCyanHover);
+}
+
+/* shorter links for mobile */
+
+/* SHORTER LINKS SECTION */
+.advancedStatsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15rem;
+}
+.advancedStatsWrapper .smallerHeader {
+    padding-top: 5rem;
+}
+.advancedStatsWrapper .subHeader {
+    width: 30vw;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
 .infoPanels {
     position: relative;
     display: grid;
@@ -326,7 +432,7 @@ button {
 .boostLinks .smallerHeader {
     color: white;
 }
-.boostLinks .mainButton {
+.boostLinks .mainBtn {
     margin-top: 2rem;
 }
 
@@ -467,11 +573,13 @@ button {
     flex-direction: column;
     align-items: center;
     opacity: 0;
+    z-index: -2;
 }
 #mobileNav.active {
     transition: all 0.25s ease-in-out;
     top: 10vh;
     opacity: 1;
+    z-index: 20;
 }
 #mobileNav .navList {
     flex-direction: column;
@@ -487,23 +595,10 @@ button {
     align-items: center;
     text-align: center;
 }
-
-/* #mobileNav li:hover {
-    background: rgba(0, 0, 0, 0.75);
-    color: yellow;
-    letter-spacing: 1rem;
-} */
-
-/* .navList {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
 .navListItem,
 .logInItem {
     line-height: 5rem;
-    font-size: 2.25rem;
+    font-size: clamp(2rem, 1.5vw, 1.6rem);
     color: var(--textWhite50);
     margin: 0;
     padding: 0;
@@ -551,7 +646,7 @@ button {
         line-height: 1.6;
         text-align: left;
     }
-    .mainButton {
+    .mainBtn {
         width: clamp(24rem, 90%, 15rem);
         z-index: 5;
     }
@@ -575,14 +670,54 @@ button {
         flex-direction: row;
         flex-wrap: nowrap;
         padding: 5rem 3rem;
+        width: 70vw;
+        z-index: 21;
     }
     .shortenItButton {
         margin-top: 0;
         margin-left: 2rem;
     }
+
+    /* SHORTER LINKS SECTION */
+
+    .shortLinksSection {
+        width: 70vw;
+    }
+    .shorterLinksContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .originalLink {
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0;
+        border-bottom: 0;
+        padding-right: 3rem;
+    }
+    .copyBtnContainer {
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 50%;
+    }
+    .itemShortlink {
+    }
+    .copyBtn {
+        max-width: 30%;
+    }
+
     /* advanced stats */
     .advancedStatsContainer {
-        height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        height: auto;
+        margin: 0 auto;
+        padding-bottom: 30rem;
     }
     .advancedStatsWrapper {
         padding-top: 0;
@@ -649,7 +784,8 @@ button {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 100%;
+        z-index: -3;
+        /* width: 100%; */
     }
     .logInDetails {
         flex-direction: row;
@@ -667,7 +803,7 @@ button {
         cursor: pointer;
     }
     .logInItem {
-        margin-left: 5rem;
+        /* margin-left: 5rem; */
         border-top: none;
         line-height: 1.6;
         width: 100%;
@@ -681,8 +817,13 @@ button {
         margin: 0;
         width: 80%;
     }
-    .bob {
-        background: red;
+    .navListItem:hover,
+    .logInItem:hover {
+        color: var(--primaryColorCyan);
+    }
+    .shortenItButton:hover {
+        transition: var(--transitionAll);
+        background: black;
     }
 }
 @media only screen and (min-width: 75rem) {
