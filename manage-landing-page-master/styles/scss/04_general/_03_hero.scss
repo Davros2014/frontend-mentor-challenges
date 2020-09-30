@@ -4,59 +4,32 @@
 
 /* ///////////// HERO SECTION /////////////*/
 
+.manageHero {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10rem;
+    overflow: hidden;
+}
 .heroImg {
     object-fit: cover;
     width: 100%;
+    max-width: 50%;
     object-position: right;
     margin-bottom: 5rem;
-    margin-left: 25%;
     z-index: -1;
+    // background: red;
+    padding: 0;
+    margin: 0;
 }
 .heroInfo {
-    width: 90vw;
+    width: 100%;
     margin: 0 auto;
-    margin-bottom: 5rem;
     z-index: -1;
     text-align: center;
-}
-
-/* ///////////// ADV STATS SECTION /////////////*/
-.advancedStatsContainer {
-    position: relative;
-    background: var(--bgGrey);
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 10rem;
-}
-
-.manageInput {
-    position: absolute;
-    width: 90vw;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    background: var(--primaryDarkViolet);
-    background-image: url(./images/bg-shorten-desktop.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top left;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 1.75rem 2rem;
-    flex-direction: column;
-    z-index: 1;
-}
-.manageButton {
-    width: 100%;
-    border-radius: 8px;
-    font-weight: 700;
-    margin-top: 2rem;
-    font-size: clamp(1.4rem, 1.15vw, 1.6rem);
-    border: 2px solid rgba(0, 0, 0, 0);
-    padding: 1.8rem;
+    // background: green;
 }
 
 /* /////////////////////////////////////
@@ -64,4 +37,11 @@
 //////////////////////////////////////*/
 
 @media only screen and (min-width: 62.5rem) {
+    .manageHero {
+        flex-direction: row-reverse;
+        height: 100vh;
+    }
+    .heroInfo {
+        width: 40%;
+    }
 }

@@ -62,11 +62,16 @@ html {
   font-size: 62.5%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: "Be Vietnam", sans-serif;
   color: var(--veryDarkGrey);
   font-size: 1.6rem;
+  vertical-align: middle;
 }
 
 h1,
@@ -84,27 +89,30 @@ span {
 p {
   font-family: "Be Vietnam", sans-serif;
   width: 100%;
-  height: auto;
-  vertical-align: middle;
   display: block;
 }
 
-.appWidth {
-  width: 70vw;
-  margin: 0 auto;
+button {
+  outline: none;
+  border: none;
 }
 
-.manageHeader {
-  font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+.appContainer {
+  padding-top: 8rem;
+}
+
+.appWidth {
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .mainBtn {
   /* font-size: clamp(1.5rem, 1.5vw, 1.6rem); */
   font-size: clamp(2rem, 1.5vw, 1.6rem);
   font-weight: 500;
-  color: var(--textWhite);
-  background: red;
-  padding: 1.75rem 2rem;
+  color: var(--neutralVeryPaleRed);
+  background: var(--primaryBrightRed);
+  padding: 1.75rem 1.75rem;
   border-radius: 50px;
   width: 50%;
   margin: 0 auto;
@@ -114,8 +122,69 @@ p {
 
 .mainBtn:hover {
   transition: var(--transitionAll);
-  background: red;
+  background: var(--primaryBrightRed);
   cursor: pointer;
+}
+
+.mainHeader {
+  font-size: clamp(4.4rem, 5vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.2rem;
+  text-align: center;
+}
+
+.smallerHeader {
+  font-size: clamp(2.6rem, 3vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.05rem;
+  text-align: center;
+}
+
+.smallHeader {
+  font-size: clamp(2.6rem, 3vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.05rem;
+  text-align: center;
+}
+
+.subHeader {
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.05rem;
+  color: var(--neutralDarkGrayishBlue);
+  text-align: center;
+  margin: 1.6rem auto 2rem auto;
+}
+
+.bodyText {
+  font-size: clamp(1.35rem, 2.5vw, 1.5rem);
+  color: var(--neutralDarkGrayishBlue);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .appWidth {
+    width: 70vw;
+  }
+
+  .mainHeader {
+    font-size: clamp(4.4rem, 5vw, 5.4rem);
+    text-align: left;
+  }
+
+  .subHeader {
+    text-align: left;
+  }
+}
+.manageHeader {
+  font-size: clamp(1.6rem, 1.5vw, 2.4rem);
 }
 
 .manageLogo {
@@ -131,6 +200,43 @@ p {
   align-items: center;
   width: 100%;
   z-index: 10;
+}
+
+.desktopNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: -3;
+  flex: 2;
+  /* width: 100%; */
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  flex: 5;
+}
+
+.navListItem a {
+  line-height: 5rem;
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+  color: var(--neutralDarkGrayishBlue);
+  margin: 0;
+  padding: 0;
+  transition: var(--transitionAll);
+}
+
+.navListItem a:hover {
+  cursor: pointer;
+  transition: var(--transitionAll);
+  color: var(--primaryBrightRed);
+}
+
+.navButton {
+  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+  color: var(--neutralVeryPaleRed);
+  flex: 1;
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.125);
 }
 
 /* ///// MOBILE NAV ///// */
@@ -166,7 +272,7 @@ p {
 
 #mobileNav.active ~ .mobileBtn span:nth-child(1) {
   transform: translate(0, 9px) rotate(45deg);
-  background: var(--primaryColorCyan);
+  background: var(--primaryBrightRed);
 }
 
 #mobileNav ~ .mobileBtn span:nth-child(2) {
@@ -185,12 +291,12 @@ p {
 
 #mobileNav.active ~ .mobileBtn span:nth-child(3) {
   transform: translate(0, -8px) rotate(-45deg);
-  background: var(--primaryColorCyan);
+  background: var(--primaryBrightRed);
 }
 
 /* ///////////////////////////////////////////// */
 #mobileNav {
-  background: var(--primaryDarkViolet);
+  background: var(--primaryBrightRed);
   position: fixed;
   border-radius: 10px;
   top: -10vh;
@@ -223,67 +329,85 @@ p {
   text-align: center;
 }
 
+@media only screen and (min-width: 62.5rem) {
+  .mobileBtn {
+    display: none;
+  }
+
+  /* DESKTOP MENU  */
+  .desktopNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -3;
+  }
+
+  .navList {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+  }
+
+  .navListItem a {
+    font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+    margin-left: 5rem;
+    font-weight: 700;
+    color: var(--accentGreyishViolet);
+    cursor: pointer;
+  }
+
+  .navButton {
+    margin-top: 0;
+  }
+
+  .navListItem a:hover,
+.logInItem a:hover {
+    transition: var(--transitionAll);
+    color: var(--primaryColorCyan);
+  }
+}
 /* ///////////// HERO SECTION /////////////*/
+.manageHero {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10rem;
+  overflow: hidden;
+}
+
 .heroImg {
   object-fit: cover;
   width: 100%;
+  max-width: 50%;
   object-position: right;
   margin-bottom: 5rem;
-  margin-left: 25%;
   z-index: -1;
+  padding: 0;
+  margin: 0;
 }
 
 .heroInfo {
-  width: 90vw;
+  width: 100%;
   margin: 0 auto;
-  margin-bottom: 5rem;
   z-index: -1;
   text-align: center;
-}
-
-/* ///////////// ADV STATS SECTION /////////////*/
-.advancedStatsContainer {
-  position: relative;
-  background: var(--bgGrey);
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  padding-bottom: 10rem;
-}
-
-.manageInput {
-  position: absolute;
-  width: 90vw;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  background: var(--primaryDarkViolet);
-  background-image: url(./images/bg-shorten-desktop.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top left;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 1.75rem 2rem;
-  flex-direction: column;
-  z-index: 1;
-}
-
-.manageButton {
-  width: 100%;
-  border-radius: 8px;
-  font-weight: 700;
-  margin-top: 2rem;
-  font-size: clamp(1.4rem, 1.15vw, 1.6rem);
-  border: 2px solid rgba(0, 0, 0, 0);
-  padding: 1.8rem;
 }
 
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
+@media only screen and (min-width: 62.5rem) {
+  .manageHero {
+    flex-direction: row-reverse;
+    height: 100vh;
+  }
+
+  .heroInfo {
+    width: 40%;
+  }
+}
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/

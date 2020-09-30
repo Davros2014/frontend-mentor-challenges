@@ -60,11 +60,15 @@ html {
     text-decoration: none;
     font-size: 62.5%;
 }
+html {
+    font-size: 62.5%;
+}
 body {
     margin: 0;
     font-family: "Be Vietnam", sans-serif;
     color: var(--veryDarkGrey);
     font-size: 1.6rem;
+    vertical-align: middle;
 }
 
 h1,
@@ -82,24 +86,26 @@ span {
 p {
     font-family: "Be Vietnam", sans-serif;
     width: 100%;
-    height: auto;
-    vertical-align: middle;
     display: block;
 }
-.appWidth {
-    width: 70vw;
-    margin: 0 auto;
+button {
+    outline: none;
+    border: none;
 }
-.manageHeader {
-    font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+.appContainer {
+    padding-top: 8rem;
+}
+.appWidth {
+    width: 90vw;
+    margin: 0 auto;
 }
 .mainBtn {
     /* font-size: clamp(1.5rem, 1.5vw, 1.6rem); */
     font-size: clamp(2rem, 1.5vw, 1.6rem);
     font-weight: 500;
-    color: var(--textWhite);
-    background: red;
-    padding: 1.75rem 2rem;
+    color: var(--neutralVeryPaleRed);
+    background: var(--primaryBrightRed);
+    padding: 1.75rem 1.75rem;
     border-radius: 50px;
     width: 50%;
     margin: 0 auto;
@@ -108,6 +114,58 @@ p {
 }
 .mainBtn:hover {
     transition: var(--transitionAll);
-    background: red;
+    background: var(--primaryBrightRed);
     cursor: pointer;
+}
+
+.mainHeader {
+    font-size: clamp(4.4rem, 5vw, 5.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.2rem;
+    text-align: center;
+}
+.smallerHeader {
+    font-size: clamp(2.6rem, 3vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.05rem;
+    text-align: center;
+}
+.smallHeader {
+    font-size: clamp(2.6rem, 3vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.05rem;
+    text-align: center;
+}
+.subHeader {
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+    color: var(--neutralDarkGrayishBlue);
+    text-align: center;
+    margin: 1.6rem auto 2rem auto;
+}
+.bodyText {
+    font-size: clamp(1.35rem, 2.5vw, 1.5rem);
+    color: var(--neutralDarkGrayishBlue);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.05rem;
+    text-align: center;
+}
+
+@media only screen and (min-width: 62.5rem) {
+    .appWidth {
+        width: 70vw;
+    }
+    .mainHeader {
+        font-size: clamp(4.4rem, 5vw, 5.4rem);
+        text-align: left;
+    }
+    .subHeader {
+        text-align: left;
+    }
 }

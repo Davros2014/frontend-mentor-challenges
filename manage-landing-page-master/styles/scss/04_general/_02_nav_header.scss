@@ -2,6 +2,9 @@
 //          NAVBAR - MOBILE          //
 ///////////////////////////////////////
 
+.manageHeader {
+    font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+}
 .manageLogo {
     max-width: 100%;
     height: 100%;
@@ -14,6 +17,38 @@
     align-items: center;
     width: 100%;
     z-index: 10;
+}
+.desktopNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -3;
+    flex: 2;
+    /* width: 100%; */
+}
+.navList {
+    display: flex;
+    align-items: center;
+    flex: 5;
+}
+.navListItem a {
+    line-height: 5rem;
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    color: var(--neutralDarkGrayishBlue);
+    margin: 0;
+    padding: 0;
+    transition: var(--transitionAll);
+}
+.navListItem a:hover {
+    cursor: pointer;
+    transition: var(--transitionAll);
+    color: var(--primaryBrightRed);
+}
+.navButton {
+    font-size: clamp(1.4rem, 1.5vw, 1.6rem);
+    color: var(--neutralVeryPaleRed);
+    flex: 1;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.125);
 }
 /* ///// MOBILE NAV ///// */
 
@@ -44,7 +79,7 @@
 }
 #mobileNav.active ~ .mobileBtn span:nth-child(1) {
     transform: translate(0, 9px) rotate(45deg);
-    background: var(--primaryColorCyan);
+    background: var(--primaryBrightRed);
 }
 #mobileNav ~ .mobileBtn span:nth-child(2) {
     transition: var(--transitionAll);
@@ -59,12 +94,12 @@
 }
 #mobileNav.active ~ .mobileBtn span:nth-child(3) {
     transform: translate(0, -8px) rotate(-45deg);
-    background: var(--primaryColorCyan);
+    background: var(--primaryBrightRed);
 }
 /* ///////////////////////////////////////////// */
 
 #mobileNav {
-    background: var(--primaryDarkViolet);
+    background: var(--primaryBrightRed);
     position: fixed;
 
     border-radius: 10px;
@@ -94,4 +129,40 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@media only screen and (min-width: 62.5rem) {
+    .mobileBtn {
+        display: none;
+    }
+    /* DESKTOP MENU  */
+
+    .desktopNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: -3;
+    }
+    .mainNav {
+    }
+    .navList {
+        display: flex;
+        align-items: center;
+        margin-left: 15%;
+    }
+    .navListItem a {
+        font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+        margin-left: 5rem;
+        font-weight: 700;
+        color: var(--accentGreyishViolet);
+        cursor: pointer;
+    }
+    .navButton {
+        margin-top: 0;
+    }
+    .navListItem a:hover,
+    .logInItem a:hover {
+        transition: var(--transitionAll);
+        color: var(--primaryColorCyan);
+    }
 }
