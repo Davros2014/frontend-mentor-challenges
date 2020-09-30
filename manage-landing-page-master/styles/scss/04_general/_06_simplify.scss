@@ -1,0 +1,35 @@
+///////////////////////////////////////
+//          SIMPLIFY SECTION         //
+///////////////////////////////////////
+
+.simplifyContainer {
+    background: var(--primaryBrightRed);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: cover;
+    background-image: url(../../../../images/bg-simplify-section-desktop.svg);
+}
+
+.simplifyContainer .innerContainer {
+    padding: 7rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.simplifyContainer .smallerHeader {
+    width: 50%;
+    text-align: left;
+    color: white;
+}
+.simplifyContainer .mainBtn {
+    background: white;
+    color: var(--primaryBrightRed);
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+
+@media only screen and (min-width: 62.5rem) {
+}

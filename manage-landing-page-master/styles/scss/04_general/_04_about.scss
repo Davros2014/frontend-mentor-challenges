@@ -10,16 +10,60 @@
     display: grid;
     grid-template-columns: 1fr;
 }
+.aboutManage .smallerHeader {
+    margin: 0 auto;
+    font-weight: 700;
+    color: var(--primaryDarkBlue);
+    letter-spacing: -0.02;
+    line-height: 1.5;
+}
 .whatsDifferent {
-    background: red;
+    width: 70%;
+    text-align: left;
 }
 .companyHighlights {
-    background: blue;
+    // background: blue;
+}
+.companyInfo {
+    display: flex;
+    // align-items: center;
+}
+.companyInfoNum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    min-width: 4rem;
+    max-width: 6rem;
+    padding: 1rem;
+    border-radius: 50px;
+    background: var(--primaryBrightRed);
+    color: var(--neutralVeryPaleRed);
+    font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+}
+.companyInfo .smallHeader {
+    margin-left: 2rem;
+    color: var(--neutralVeryDarkBlue);
+    text-align: left;
+}
+.companyInfoText {
+    margin-top: 0;
+    color: var(--neutralDarkGrayishBlue);
+    margin-left: 8.25rem;
 }
 
 @media only screen and (min-width: 62.5rem) {
     .aboutManage {
-        grid-template-columns: repeat(2, minmax(50%, 1fr));
-        grid-column-gap: 5rem;
+        grid-template-columns: repeat(2, minmax(48%, 1fr));
+        grid-column-gap: 4%;
+        height: 80vh;
+    }
+    .whatsDifferent {
+        width: 80%;
+    }
+    .aboutManage .smallerHeader {
+        width: 100%;
+        text-align: left;
+        line-height: 1.35;
     }
 }

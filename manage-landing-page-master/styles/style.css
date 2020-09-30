@@ -84,6 +84,7 @@ i,
 span {
   margin: 0;
   padding: 0;
+  font-family: "Be Vietnam", sans-serif;
 }
 
 p {
@@ -102,7 +103,7 @@ button {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
-  background-image: url("./images/bg-simplify-section-desktop.svg");
+  background-image: url(../../../../images/bg-simplify-section-mobile.svg);
 }
 
 .appWidth {
@@ -117,16 +118,16 @@ button {
   background: var(--primaryBrightRed);
   padding: 1.5rem 1.75rem;
   border-radius: 50px;
-  width: 50%;
-  margin: 0 auto;
+  width: 15rem;
+  max-width: 20rem;
   transition: var(--transitionAll);
   cursor: pointer;
-  box-shadow: 0px 0px 8px 8px var(--neutralVeryPaleRed);
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
 }
 
 .mainBtn:hover {
   transition: var(--transitionAll);
-  background: var(--primaryBrightRed);
+  background: var(--primaryBrightRedHover);
   cursor: pointer;
 }
 
@@ -139,7 +140,7 @@ button {
 }
 
 .smallerHeader {
-  font-size: clamp(2.6rem, 3vw, 3.2rem);
+  font-size: clamp(4.2rem, 3vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.05rem;
@@ -147,7 +148,7 @@ button {
 }
 
 .smallHeader {
-  font-size: clamp(2.6rem, 3vw, 3.2rem);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.05rem;
@@ -401,6 +402,7 @@ button {
 .heroInfo {
   width: 100%;
   margin: 0 auto;
+  margin-left: 0;
   z-index: -1;
   text-align: center;
 }
@@ -427,20 +429,153 @@ button {
   grid-template-columns: 1fr;
 }
 
-.whatsDifferent {
-  background: red;
+.aboutManage .smallerHeader {
+  margin: 0 auto;
+  font-weight: 700;
+  color: var(--primaryDarkBlue);
+  letter-spacing: -0.02;
+  line-height: 1.5;
 }
 
-.companyHighlights {
-  background: blue;
+.whatsDifferent {
+  width: 70%;
+  text-align: left;
+}
+
+.companyInfo {
+  display: flex;
+}
+
+.companyInfoNum {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4vw;
+  min-width: 4rem;
+  max-width: 6rem;
+  padding: 1rem;
+  border-radius: 50px;
+  background: var(--primaryBrightRed);
+  color: var(--neutralVeryPaleRed);
+  font-size: clamp(1.2rem, 1.25vw, 1.4rem);
+}
+
+.companyInfo .smallHeader {
+  margin-left: 2rem;
+  color: var(--neutralVeryDarkBlue);
+  text-align: left;
+}
+
+.companyInfoText {
+  margin-top: 0;
+  color: var(--neutralDarkGrayishBlue);
+  margin-left: 8.25rem;
 }
 
 @media only screen and (min-width: 62.5rem) {
   .aboutManage {
-    grid-template-columns: repeat(2, minmax(50%, 1fr));
-    grid-column-gap: 5rem;
+    grid-template-columns: repeat(2, minmax(48%, 1fr));
+    grid-column-gap: 4%;
+    height: 80vh;
+  }
+
+  .whatsDifferent {
+    width: 80%;
+  }
+
+  .aboutManage .smallerHeader {
+    width: 100%;
+    text-align: left;
+    line-height: 1.35;
   }
 }
+.testimonialsContainer {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.testimonialsContainer .smallerHeader {
+  margin-bottom: 10rem;
+  color: var(--neutralVeryDarkBlue);
+}
+
+.testimonials {
+  display: grid;
+  padding-top: 15rem;
+}
+
+.testimonialInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--neutralVeryLightGray);
+  padding: 2rem;
+}
+
+.testimonialImg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+/* /////////////////////////////////////
+   MEDIA QUERIES
+//////////////////////////////////////*/
+@media only screen and (min-width: 62.5rem) {
+  .testimonialsContainer {
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  .testimonialsContainer .mainBtn {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(4, minmax(32%, 1fr));
+    grid-column-gap: 2%;
+    padding: 3rem;
+  }
+
+  .testimonialInfo {
+    padding-top: 8rem;
+  }
+}
+.simplifyContainer {
+  background: var(--primaryBrightRed);
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+  background-image: url(../../../../images/bg-simplify-section-desktop.svg);
+}
+
+.simplifyContainer .innerContainer {
+  padding: 7rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.simplifyContainer .smallerHeader {
+  width: 50%;
+  text-align: left;
+  color: white;
+}
+
+.simplifyContainer .mainBtn {
+  background: white;
+  color: var(--primaryBrightRed);
+}
+
 /* /////////////////////////////////////
    MEDIA QUERIES
 //////////////////////////////////////*/
@@ -448,14 +583,14 @@ button {
   padding: 2.5rem 0 3.5rem 0;
   text-align: center;
   font-size: 1rem;
-  border-top: 1px solid var(--cyan);
+  border-top: 1px solid var(--primaryBrightRed);
   background: var(--veryDarkGrey);
   height: 5rem;
   color: white;
 }
 
 .attribution a {
-  color: var(--cyan);
+  color: var(--primaryBrightRed);
   font-size: 1rem;
 }
 
