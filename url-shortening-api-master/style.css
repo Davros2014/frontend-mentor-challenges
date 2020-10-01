@@ -170,6 +170,7 @@ button {
     flex-direction: column;
     align-items: center;
     padding-bottom: 10rem;
+    overflow: hidden;
 }
 
 /* ///////////// HERO SECTION /////////////*/
@@ -177,7 +178,9 @@ button {
 .heroImg {
     object-fit: cover;
     width: 100%;
+    object-position: right;
     margin-bottom: 5rem;
+    margin-left: 25%;
     z-index: -1;
 }
 .heroInfo {
@@ -462,6 +465,9 @@ button {
     margin-bottom: 2rem;
 }
 .footerListItem {
+    line-height: 1.8;
+}
+.footerListItem a {
     font-size: clamp(1.4rem, 1.75vw, 1.4rem);
     color: var(--accentGrey);
     line-height: 1.8;
@@ -596,8 +602,8 @@ button {
     align-items: center;
     text-align: center;
 }
-.navListItem,
-.logInItem {
+.navListItem a,
+.logInItem a {
     line-height: 5rem;
     font-size: clamp(2rem, 1.5vw, 1.6rem);
     color: var(--textWhite50);
@@ -605,8 +611,8 @@ button {
     padding: 0;
     transition: var(--transitionAll);
 }
-.navListItem:hover,
-.logInItem:hover {
+.navListItem a:hover,
+.logInItem a:hover {
     cursor: pointer;
     transition: var(--transitionAll);
     color: var(--textWhite);
@@ -794,8 +800,9 @@ button {
         display: flex;
         align-items: center;
     }
-    .navListItem,
-    .logInItem {
+
+    .navListItem a,
+    .logInItem a {
         font-size: clamp(1.2rem, 1.5vw, 1.4rem);
         margin-left: 5rem;
         font-weight: 700;
@@ -817,8 +824,9 @@ button {
         margin: 0;
         width: 80%;
     }
-    .navListItem:hover,
-    .logInItem:hover {
+    .navListItem a:hover,
+    .logInItem a:hover {
+        transition: var(--transitionAll);
         color: var(--primaryColorCyan);
     }
     .shortenItButton:hover {

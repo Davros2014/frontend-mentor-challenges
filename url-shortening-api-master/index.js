@@ -155,14 +155,14 @@ function getLinks() {
     });
     addCopyBtn();
 }
-//
+
 const addCopyBtn = () => {
     let copyButton = document.querySelectorAll("#copy");
     copyButton.forEach(copyButton =>
         copyButton.addEventListener("click", copyIt)
     );
 };
-//
+
 function copyIt(event) {
     // copy link
     let textarea = document.createElement("textarea");
