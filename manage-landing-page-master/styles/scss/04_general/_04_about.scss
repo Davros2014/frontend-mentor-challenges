@@ -42,9 +42,29 @@
     font-size: clamp(1.2rem, 1.25vw, 1.4rem);
 }
 .companyInfo .smallHeader {
+    position: relative;
     margin-left: 2rem;
     color: var(--neutralVeryDarkBlue);
     text-align: left;
+}
+.companyInfo .smallHeader::before {
+    content: "1";
+    position: absolute;
+    left: -4vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vw;
+    min-width: 4rem;
+    max-width: 6rem;
+    padding: 1rem;
+    border-radius: 50px;
+    background: var(--primaryBrightRed);
+    color: var(--neutralVeryPaleRed);
+    font-size: clamp(1.2rem, 1.25vw, 1.4rem);
 }
 .companyInfoText {
     margin-top: 0;

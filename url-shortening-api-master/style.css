@@ -508,10 +508,10 @@ button {
     background: var(--veryDarkGrey);
     height: 5rem;
     color: white;
-}
-.attribution a {
-    color: var(--primaryColorCyanHover);
-    font-size: 1rem;
+    a {
+        color: var(--primaryColorCyanHover);
+        font-size: 1rem;
+    }
 }
 
 /* ///// MOBILE NAV ///// */
