@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 
 .manageHeader {
-    font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+    font-size: clamp(1.6rem, 1.5vw, 2rem);
 }
 .manageLogo {
     max-width: 100%;
@@ -17,22 +17,18 @@
     align-items: center;
     width: 100%;
     z-index: 10;
-    flex: 1;
+    // flex: 1;
 }
 .desktopNav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     z-index: -3;
-    flex: 2;
-    // background: green;
 }
 .navList {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex: 2;
-    padding: 0 10vw;
 }
 .navListItem {
     display: flex;
@@ -41,7 +37,8 @@
 }
 .navListItem a {
     line-height: 5rem;
-    font-size: clamp(1.8rem, 1.5vw, 1.6rem);
+    font-size: clamp(1.5rem, 1vw, 1rem);
+
     color: var(--neutralVeryDarkBlue);
     margin: 0;
     padding: 0;
@@ -54,7 +51,7 @@
 }
 .navButton {
     max-width: 15rem;
-    flex: 1;
+    // flex: 1;
 }
 /* ///// MOBILE NAV ///// */
 
@@ -76,9 +73,9 @@
     height: 3px;
     background: var(--veryDarkGrey);
 }
-#mobileNav.active ~ .toggleBtn span {
-    background: #000;
-}
+// #mobileNav.active ~ .toggleBtn span {
+//     background: #000;
+// }
 #mobileNav ~ .mobileBtn span:nth-child(1) {
     transition: var(--transitionAll);
     transform: translate(0, 0) rotate(0deg);
@@ -135,8 +132,8 @@
 #mobileNav .mobileBg {
     display: block;
     position: fixed;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.15);
@@ -153,6 +150,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 100;
 }
 
 @media only screen and (min-width: 62.5rem) {
@@ -173,12 +171,12 @@
         display: flex;
         align-items: flex-end;
         text-align: right;
+        padding: 0 20px;
+        padding-right: 10vw;
     }
     .navListItem a {
-        font-size: clamp(1.2rem, 1.25vw, 1.4rem);
         margin-left: 5rem;
         font-weight: 700;
-        color: var(--accentGreyishViolet);
         cursor: pointer;
     }
     .navButton {
