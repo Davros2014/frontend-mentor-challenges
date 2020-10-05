@@ -16,13 +16,14 @@
 .heroImg {
     object-fit: cover;
     width: 100%;
-    max-width: 50%;
-    object-position: right;
-    margin-bottom: 5rem;
+    max-width: 90%;
+
     z-index: -1;
-    // background: red;
     padding: 0;
     margin: 0;
+    margin-top: 5rem;
+    object-position: right;
+    margin-bottom: 5rem;
 }
 .heroInfo {
     width: 100%;
@@ -45,5 +46,8 @@
     .heroInfo {
         width: 40%;
         text-align: left;
+    }
+    .heroImg {
+        max-width: 50%;
     }
 }

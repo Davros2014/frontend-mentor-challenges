@@ -51,6 +51,7 @@ html {
   --neutralVeryDarkBlue: hsl(233, 12%, 13%);
   --neutralVeryPaleRed: hsl(13, 100%, 96%);
   --neutralVeryLightGray: hsl(0, 0%, 98%);
+  --transitionAll: all 0.15s ease-in-out;
 }
 
 * {
@@ -103,12 +104,26 @@ button {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
-  background-image: url(../../../../images/bg-simplify-section-mobile.svg);
+  background-image: url(../images/bg-simplify-section-mobile.svg);
 }
 
 .appWidth {
   width: 90vw;
   margin: 0 auto;
+}
+
+.tabletPattern {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  transform: translate(-65%, -25%);
+  z-index: -1;
+  width: 120%;
+}
+
+.midpattern {
+  transform: translate(-25%, -25%);
+  top: 60%;
 }
 
 .mainBtn {
@@ -187,6 +202,16 @@ button {
   .subHeader {
     text-align: left;
   }
+
+  .tabletPattern {
+    transform: translate(-80%, -20%);
+    width: auto;
+  }
+
+  .midpattern {
+    left: 20%;
+    top: 160%;
+  }
 }
 .manageHeader {
   font-size: clamp(1.6rem, 1.5vw, 2.4rem);
@@ -232,8 +257,8 @@ button {
 
 .navListItem a {
   line-height: 5rem;
-  font-size: clamp(1.4rem, 1.5vw, 1.6rem);
-  color: var(--neutralDarkGrayishBlue);
+  font-size: clamp(1.8rem, 1.5vw, 1.6rem);
+  color: var(--neutralVeryDarkBlue);
   margin: 0;
   padding: 0;
   transition: var(--transitionAll);
@@ -307,13 +332,14 @@ button {
 
 /* ///////////////////////////////////////////// */
 #mobileNav {
-  background: var(--primaryBrightRed);
+  background: white;
+  color: var(--neutralVeryDarkBlue);
   position: fixed;
-  border-radius: 10px;
-  top: -10vh;
+  border-radius: 3px;
+  top: 15vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
+  width: 80%;
   max-width: 500px;
   margin: 0 auto;
   transition: all 0.1s ease-in-out;
@@ -322,13 +348,33 @@ button {
   flex-direction: column;
   align-items: center;
   opacity: 0;
+  font-weight: 700;
   z-index: -20;
   padding: 3rem 2rem;
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
+}
+
+#mobileNav #getStarted {
+  display: none;
+}
+
+.mobileBg {
+  display: none;
+}
+
+#mobileNav .mobileBg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: -10;
 }
 
 #mobileNav.active {
   transition: all 0.25s ease-in-out;
-  top: 13vh;
   opacity: 1;
   z-index: 20;
 }
@@ -391,12 +437,13 @@ button {
 .heroImg {
   object-fit: cover;
   width: 100%;
-  max-width: 50%;
-  object-position: right;
-  margin-bottom: 5rem;
+  max-width: 90%;
   z-index: -1;
   padding: 0;
   margin: 0;
+  margin-top: 5rem;
+  object-position: right;
+  margin-bottom: 5rem;
 }
 
 .heroInfo {
@@ -419,6 +466,10 @@ button {
   .heroInfo {
     width: 40%;
     text-align: left;
+  }
+
+  .heroImg {
+    max-width: 50%;
   }
 }
 /* /////////////////////////////////////
@@ -575,11 +626,14 @@ button {
 
 .testimonials {
   display: grid;
-  grid-template-columns: repeat(4, minmax(550px, 1fr));
+  grid-template-columns: repeat(4, minmax(70%, 1fr));
   padding-top: 10rem;
   padding-bottom: 5rem;
   border: 5px solid red;
+  left: 0;
   height: auto;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .testimonialInfo {
@@ -588,7 +642,7 @@ button {
   flex-direction: column;
   align-items: center;
   background: var(--neutralVeryLightGray);
-  padding: 5rem;
+  padding: 4rem;
   padding-top: 8rem;
 }
 
@@ -603,7 +657,7 @@ button {
 
 .testimonialText {
   width: 100%;
-  background: red;
+  border: 1px solid blue;
 }
 
 /* /////////////////////////////////////
@@ -644,11 +698,11 @@ button {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: cover;
-  background-image: url(../../../../images/bg-simplify-section-desktop.svg);
+  background-image: url(../images/bg-simplify-section-mobile.svg);
 }
 
 .simplifyContainer .innerContainer {
-  padding: 3rem 0;
+  padding: 8rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -683,6 +737,10 @@ button {
     width: 50%;
     text-align: left;
     margin-bottom: 0;
+  }
+
+  .simplifyContainer {
+    background-image: url(../images/bg-simplify-section-desktop.svg);
   }
 }
 .footerContainer {

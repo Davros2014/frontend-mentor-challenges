@@ -51,6 +51,8 @@ html {
     --neutralVeryDarkBlue: hsl(233, 12%, 13%);
     --neutralVeryPaleRed: hsl(13, 100%, 96%);
     --neutralVeryLightGray: hsl(0, 0%, 98%);
+
+    --transitionAll: all 0.15s ease-in-out;
 }
 * {
     box-sizing: border-box;
@@ -98,12 +100,23 @@ button {
     background-repeat: no-repeat;
     background-position: top right;
     background-size: cover;
-    // background: red;
-    background-image: url(../../../../images/bg-simplify-section-mobile.svg);
+    background-image: url(../images/bg-simplify-section-mobile.svg);
 }
 .appWidth {
     width: 90vw;
     margin: 0 auto;
+}
+.tabletPattern {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform: translate(-65%, -25%);
+    z-index: -1;
+    width: 120%;
+}
+.midpattern {
+    transform: translate(-25%, -25%);
+    top: 60%;
 }
 .mainBtn {
     font-size: clamp(1.4rem, 1.5vw, 1.6rem);
@@ -173,5 +186,13 @@ button {
     }
     .subHeader {
         text-align: left;
+    }
+    .tabletPattern {
+        transform: translate(-80%, -20%);
+        width: auto;
+    }
+    .midpattern {
+        left: 20%;
+        top: 160%;
     }
 }
